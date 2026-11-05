@@ -1,0 +1,391 @@
+﻿model_id,variant,variant_label,intel,py,hle,lctx,econ,phys,know,hon,code,agent,gpqa,term,ifb,tau2,pct_inte,pct_codi,pct_agen,measured_ms
+tencent/hy4,default,Tencent Hy4,34.6,,,,,,50,10.9,,,,,,,59,,,1793880011736
+openai/gpt-6.1-terra,off,GPT-6.1 Terra (Non-reasoning),30.5,47.8,21.1,67.7,39.3,4.9,40.7,22.9,,,,,,,51,,,1793750412754
+openai/gpt-6.1-terra,low,GPT-6.1 Terra (Low),29.4,52.4,35.8,81,35.2,15.1,45.6,58.4,,,,,,,46,,,1793750412754
+openai/gpt-6.1-terra,medium,GPT-6.1 Terra (Medium),38.2,51.6,40.2,80.7,41.2,21.4,47.4,60.4,,,,,,,67,,,1793750412754
+openai/gpt-6.1-terra,high,GPT-6.1 Terra (High),42.4,51.6,43.3,82.3,42.6,25.7,47.3,63,,,,,,,71,,,1793750412754
+openai/gpt-6.1-terra,xhigh,GPT-6.1 Terra (Xhigh),45.3,53.4,43.7,81.7,45.7,26.6,48,63.2,,,,,,,77,,,1793750412754
+openai/gpt-6.1-terra,max,GPT-6.1 Terra (Max),51.3,55.1,46.2,82.7,48.8,28,47.6,65.5,,,,,,,87,,,1793750412754
+moonshotai/kimi-k3.1-pro,default,Kimi K3.1 Pro,46.5,60.8,52.5,86.3,67.9,24.6,48.9,62.7,,,,,,,79,,,1793750412754
+minimax/minimax-m3.1-flash,default,MiniMax-M3.1-Flash,29.1,53.4,48,79.7,48.3,22.3,45.1,6.3,,,,,,,45,,,1793750412754
+deepseek/deepseek-v4.1-flash-1017,off,DeepSeek V4.1 Flash 1017 (Non-reasoning),18.5,38.5,11.5,57.3,,0.3,21.9,74.7,,,,,,,23,,,1793664015011
+deepseek/deepseek-v4.1-flash-1017,high,DeepSeek V4.1 Flash 1017 (High),28.6,,,,,,38.9,38.8,,,,,,,44,,,1793750412754
+deepseek/deepseek-v4.1-flash-1017,max,DeepSeek V4.1 Flash (Max),,51.9,39.2,84,55,14.3,,,,,,,,,,,,1793188864989
+reflection/beam-1.0-501b-a23b,default,Beam 1.0,17.7,48.5,34.7,78,33.9,13.1,30.7,59,,,,,,,22,,,1793664015011
+meta/muse-spark-open,xhigh,Muse Spark Open (Xhigh),24.9,58.4,43.9,78.3,45.1,14.9,42,72,,,89,,,,36,,,1793750412754
+nvidia/nemotron-3.5-super-vl,default,Nemotron 3.5 Super VL,13.6,47.8,30.7,69,33.1,10.6,21.2,69.5,,,,,,,18,,,1793188864989
+google/gemini-4-argon,high,Gemini 4 Argon (High),50.4,61.8,57.1,79.7,56.5,27.1,48.3,95.7,,,,,,,86,,,1793620809958
+meta/muse-wonder,max,Muse Wonder (Max),43.6,60.3,50.1,80.7,63.5,28.3,38,79.1,,,,,,,74,,,1793750412754
+stepfun/step-5-preview,default,Step 5 Preview,28.5,58.9,46.5,88.3,54.7,20.9,36.4,68.7,,,,,,,43,,,1793188864989
+anthropic/claude-haiku-5.5,low,Claude Haiku 5.5 (Low),18.6,49.2,27,72,31.5,9.1,30.4,59.5,,,,,,,25,,,1793188864989
+anthropic/claude-haiku-5.5,medium,Claude Haiku 5.5 (Medium),24.6,49,33.8,77.3,39.1,12.9,31.7,59.6,,,,,,,35,,,1793620809958
+anthropic/claude-haiku-5.5,high,Claude Haiku 5.5 (High),29.9,48.7,37.3,77.3,46.2,18.6,31.8,61.1,,,,,,,47,,,1793750412754
+anthropic/claude-haiku-5.5,xhigh,Claude Haiku 5.5 (Xhigh),34.6,51.7,42.7,78.3,51.1,22.6,33.8,60.8,,,,,,,59,,,1793750412754
+anthropic/claude-haiku-5.5,max,Claude Haiku 5.5 (Max),36.5,55,44.4,82.7,56.5,18.9,34.7,65.8,,,,,,,65,,,1793750412754
+mistralai/mistral-large-4-0,high,Mistral Large 4 (High),26.1,,,,,10,26,71.8,,,,,,,38,,,1793750412754
+inclusionai/ling-3.1-flash,default,Ling 3.1 Flash,,54.1,39.4,83,56.3,18,,,,,,,,,,,,1793188864989
+openai/gpt-6.1-sol,low,GPT-6.1 Sol (Low),34.8,53.2,47.4,84,41.1,24.9,58.6,50.1,,,,,,,61,,,1793750412754
+openai/gpt-6.1-sol,medium,GPT-6.1 Sol (Medium),46.3,53.2,49.9,83.3,48,27.7,59.6,51.9,,,,,,,78,,,1793750412754
+openai/gpt-6.1-sol,high,GPT-6.1 Sol (High),50.3,55.8,51.4,82.3,51,30,60.4,51,,,,,,,85,,,1793750412754
+openai/gpt-6.1-sol,xhigh,GPT-6.1 Sol (Xhigh),52.5,55.7,52.6,79.7,52.7,31.7,61.1,52,,,,,,,91,,,1793750412754
+openai/gpt-6.1-sol,max,GPT-6.1 Sol (Max),54.6,54.2,52.9,83,55.4,31.7,61.8,48.1,,,,,,,94,,,1793750412754
+anthropic/claude-sonnet-5.5,low,"Claude Sonnet 5.5 (Low, Default Fallback)",25.6,49.1,36.2,76,34.1,11.4,46,52.3,,,,,,,37,,,1793750412754
+anthropic/claude-sonnet-5.5,medium,"Claude Sonnet 5.5 (Medium, Default Fallback)",30.8,52.9,39.8,76.3,41.4,16.9,45.8,50,,,,,,,52,,,1793750412754
+anthropic/claude-sonnet-5.5,high,"Claude Sonnet 5.5 (High, Default Fallback)",41.5,53.7,45.8,78,52.8,24.6,50.3,36.4,,,,,,,69,,,1793750412754
+anthropic/claude-sonnet-5.5,xhigh,"Claude Sonnet 5.5 (Xhigh, Default Fallback)",49.9,57.3,50,79.7,61.8,31.1,50.9,38.3,,,,,,,83,,,1793750412754
+anthropic/claude-sonnet-5.5,max,"Claude Sonnet 5.5 (Max, Default Fallback)",54.5,61,55,82.7,66.9,31.4,51.5,56.7,,,,,,,93,,,1793750412754
+upstage/solar-mini4,default,Solar Mini 4,,47.6,25.8,83.3,29.6,1.4,18.2,63.5,,,,,,,,,,1793188864989
+cohere/command-a-plus,default,Command A+,6.2,38.5,12,52.7,1.1,0.3,9.8,86.1,27.8,1,76.1,25,73.9,80.7,5,28,10,1793188864989
+openai/gpt-6-luna,off,GPT-6 Luna (Non-reasoning),9.4,43.1,8.6,39.7,27.6,1.1,30.1,20,,,,,,,9,,,1793188864989
+openai/gpt-6-luna,low,GPT-6 Luna (Low),9.7,46.9,20.3,74,27,2.6,36.1,15.2,,,,,,,11,,,1793188864989
+openai/gpt-6-luna,medium,GPT-6 Luna (Medium),18.5,50.9,28.3,78.3,38.5,10.6,38.7,14.7,,,,,,,23,,,1793750412754
+openai/gpt-6-luna,high,GPT-6 Luna (High),21.4,50.3,32.9,79.3,42.6,15.4,39,15.1,,,,,,,28,,,1793188864989
+openai/gpt-6-luna,xhigh,GPT-6 Luna (Xhigh),23.5,51.7,34.3,80,43.6,17.4,38.6,16,,,,,,,33,,,1793750412754
+openai/gpt-6-luna,max,GPT-6 Luna (Max),27.9,54.6,38.5,83.3,47.2,19.4,39.6,20.7,,,,,,,41,,,1793750412754
+openai/gpt-6-sol,off,GPT-6 Sol (Non-reasoning),,47.3,18.4,64,37.7,4,,,,,,,,,,,,1793188864989
+openai/gpt-6-sol,low,GPT-6 Sol (Low),,50.2,34.9,79.3,35.1,16.3,,,,,,,,,,,,1793188864989
+openai/gpt-6-sol,medium,GPT-6 Sol (Medium),,53.8,41,82.3,42.6,24.6,,,,,,,,,,,,1793188864989
+openai/gpt-6-sol,high,GPT-6 Sol (High),,54.9,44.1,83.7,45.2,25.4,,,,,,,,,,,,1793188864989
+openai/gpt-6-sol,xhigh,GPT-6 Sol (Xhigh),,55.1,46.3,81.3,48.3,28,,,,,,,,,,,,1793620809958
+openai/gpt-6-sol,max,GPT-6 Sol (Max),44.2,57.6,47.9,83.7,50.8,30.9,51.1,39.2,,,,,,,75,,,1793793611476
+anthropic/claude-opus-5.5,low,"Claude Opus 5.5 (Low, Default Fallback)",34.8,58.6,48.3,80.7,37,17.7,63.3,33.7,,,,,,,61,,,1793750412754
+anthropic/claude-opus-5.5,medium,"Claude Opus 5.5 (Medium, Default Fallback)",48.2,59.3,54.7,84.3,54.6,27.7,63.9,33.1,,,,,,,81,,,1793750412754
+anthropic/claude-opus-5.5,high,"Claude Opus 5.5 (High, Default Fallback)",51.8,60.4,55.6,82.7,60.7,30.9,64.8,36.1,,,,,,,89,,,1793750412754
+anthropic/claude-opus-5.5,xhigh,"Claude Opus 5.5 (Xhigh, Default Fallback)",57.4,65,57.5,84.7,66.8,31.7,65.5,35,,,,,,,98,,,1793750412754
+anthropic/claude-opus-5.5,max,"Claude Opus 5.5 (Max, Default Fallback)",59.1,66.9,61.4,84.7,68.3,31.7,65.5,49.7,,,,,,,99,,,1793750412754
+xiaomi/mimo-v2.6-flash,default,MiMo-V2.6-Flash,26.7,51.3,35.1,74.3,55.7,12,27.2,47.8,,,,,,,39,,,1793620809958
+xiaomi/mimo-v2.6-pro,default,MiMo-V2.6-Pro,29.9,60.9,49.4,86.3,59.5,26.6,34.8,39.8,,,,,,,47,,,1793620809958
+x-ai/grok-4.7,low,Grok 4.7 (Low),31.1,54.9,39.2,80,54.6,13.4,45.7,66.2,,,,,,,55,,,1793750412754
+x-ai/grok-4.7,high,Grok 4.7 (High),35.2,57.8,42.3,77,60.8,18,41.8,79.8,,,,,,,63,,,1793750412754
+x-ai/grok-4.7,xhigh,Grok 4.7 (Xhigh),35.5,57.4,43.1,76.7,60.9,17.7,42.7,80,,,,,,,64,,,1793750412754
+inclusionai/ling-3.0-flash-vl,default,Ling-3.0-flash-VL,,44.2,22,78.3,33.5,2,,,57,28.7,86.2,,,,,61,57,1793188864989
+deepseek/deepseek-v4.1-flash,off,DeepSeek V4.1 Flash (Non-reasoning),,35.5,10.8,55.3,42.4,0.3,,,,,,,,,,,,1793620809958
+inception/mercury-2.5,default,Mercury 2.5,,38.5,11.8,71.7,0,0,,,,,,,,,,,,1793188864989
+openai/gpt-6-astra,low,GPT-6 Astra (Low),43.3,54.1,49.2,80,45.2,26.3,58.6,55.8,75.7,38.8,93.1,,,,73,88,70,1793750412754
+openai/gpt-6-astra,medium,GPT-6 Astra (Medium),51.6,54.2,52.7,79.7,49.9,29.1,59.6,54.8,76.7,46,93.9,,,,88,93,81,1793750412754
+openai/gpt-6-astra,high,GPT-6 Astra (High),54.8,55.4,53.1,80,51.8,28.9,61.1,57.5,77.1,48.2,94.9,,,,95,96,85,1793188864989
+openai/gpt-6-astra,xhigh,GPT-6 Astra (Xhigh),55.3,55.7,54.6,80,53.5,31.4,61,55.4,75.9,50.2,96.3,,,,96,89,87,1793188864989
+openai/gpt-6-astra,max,GPT-6 Astra (Max),56.9,56.5,54.7,80.7,54.2,31.7,61.6,50.2,76.9,51,96.1,,,,97,95,91,1793188864989
+qwen/qwen3.8-max-0902,0902,Qwen3.8 Max (0902),33.7,52.1,43.1,80.3,58.7,17.7,29.5,72.9,76.2,56,92.8,,,,58,90,97,1793750412754
+meta/muse-spark-1.3,xhigh,Muse Spark 1.3 (Xhigh),,59.7,47.5,83,56.6,26,37.8,77.5,76.5,51.5,94.1,,,,,92,92,1793620809958
+meta/muse-spark-1.3,max,Muse Spark 1.3 (Max),36.6,58.8,48.7,83,59,24.9,38,74.8,75.8,55.5,93.5,,,,66,88,96,1793750412754
+google/gemini-3.8-flash,low,Gemini 3.8 Flash (Low),22.5,55,37.1,80.7,40.8,4,48.3,31.9,73.5,32.6,92,,,,29,83,63,1793750412754
+google/gemini-3.8-flash,medium,Gemini 3.8 Flash (Medium),30.1,55.1,42.1,84,46.6,12.3,49.6,48.5,74.1,39.7,93.5,,,,49,84,71,1793750412754
+google/gemini-3.8-flash,high,Gemini 3.8 Flash (High),30.8,56.6,47.8,81.3,47.3,18.3,50.5,44.9,76.3,40.2,95.3,,,,52,91,72,1793750412754
+anthropic/claude-fable-5.1,low,"Claude Fable 5.1 (Low, Default Fallback)",38.7,56.7,48.9,82.3,48.8,27.7,58.7,40.2,75.2,47.1,88.1,,,,68,87,83,1793750412754
+anthropic/claude-fable-5.1,medium,"Claude Fable 5.1 (Medium, Default Fallback)",43.2,56.4,53.8,84.7,52.7,29.1,62.6,30.2,77.1,50.2,88.6,,,,72,96,87,1793750412754
+anthropic/claude-fable-5.1,high,"Claude Fable 5.1 (High, Default Fallback)",47.2,58.7,55.9,83.7,57.2,30.3,64.7,29.8,79.1,53.1,90.6,,,,80,99,95,1793750412754
+anthropic/claude-fable-5.1,xhigh,"Claude Fable 5.1 (Xhigh, Default Fallback)",50,60.9,58.7,83,62,31.1,67.2,30.5,80.7,57.2,93.4,,,,84,99,99,1793750412754
+anthropic/claude-fable-5.1,max,"Claude Fable 5.1 (Max, Default Fallback)",49.2,63.1,59.1,85.3,63.2,29.7,68.4,30,81.6,57.9,93.7,,,,82,100,99,1793750412754
+ibm-granite/granite-4.2-8b,default,Granite 4.2 8B,5.1,31.5,9.7,45,0,0.3,11.8,67.8,22.4,1.3,63.1,,,,3,21,17,1793664015011
+z-ai/glm-5.3-flash,default,GLM-5.3-Flash,27.8,51.6,39.9,80,57.5,15.4,28.2,61.7,71.5,50.9,91.2,,,,40,79,91,1793318464806
+deepseek/deepseek-v4-flash-vision-exp,max,DeepSeek V4 Flash Vision (Max),,49.7,34.5,81.3,52.7,10.9,,,65,47.5,91.3,,,,,68,84,1793188864989
+z-ai/glm-5.3,low,GLM-5.3 (Low),23.1,42,36.6,72.7,41.7,14.6,31.9,36.8,,,,,,,31,,,1793188864989
+z-ai/glm-5.3,max,GLM-5.3 (Max),31.7,59,42.3,79.7,57.8,19.1,32.3,61.1,74.8,53.1,91.7,,,,56,86,95,1793620809958
+qwen/qwen3.8-27b,off,Qwen3.8 27B (Non-reasoning),10,36.2,12.1,69.3,29.1,0.3,9.1,82,44.6,22.4,81.8,,,,12,43,46,1793404812329
+qwen/qwen3.8-27b,low,Qwen3.8 27B (Low),15.7,40,14,77.3,43.5,0,18.3,51.3,58.2,38.9,84.5,,,,19,62,70,1793318464806
+qwen/qwen3.8-27b,medium,Qwen3.8 27B (Medium),17.5,39,14.1,79.7,44.4,0,17.9,34.6,56.1,44.4,84.5,,,,21,58,80,1793620809958
+qwen/qwen3.8-27b,xhigh,Qwen3.8 27B (Xhigh),20.1,46.6,33.9,82,46.3,5.4,17.3,71.4,68.1,45.8,90.5,,,,27,72,81,1793620809958
+google/gemini-3.7-flash,low,Gemini 3.7 Flash (Low),,55.7,35.1,78.7,41.4,5.7,,,71,,90.1,,,,,77,,1793188864989
+google/gemini-3.7-flash,medium,Gemini 3.7 Flash (Medium),,59.8,39,83,43.3,9.4,,,71.5,,92.1,,,,,79,,1793620809958
+google/gemini-3.7-flash,high,Gemini 3.7 Flash (High),,57.2,47.9,81.7,45.1,14.3,,,76.1,35.2,94.5,,,,,89,65,1793620809958
+qwen/qwen3.8-2.4t-a95b,default,Qwen3.8 2.4T A95B,,54.1,42.4,80.3,55.8,20,31.4,65.5,71.9,50.1,93.5,,,,,81,87,1793188864989
+deepseek/deepseek-v4-pro-0813,max,DeepSeek V4 Pro 0813 (Max),23.1,51,41,80.3,47.9,18,45.2,5.9,68.8,41.3,92.8,,,,31,73,75,1793188864989
+x-ai/grok-4.6,low,Grok 4.6 (Low),,49.4,27.6,80.7,45.9,5.7,,,66.3,41.2,87.9,,,,,70,74,1793188864989
+x-ai/grok-4.6,medium,Grok 4.6 (Medium),,55.9,42.1,81,56,17.7,,,74.4,50.6,93.5,,,,,86,89,1793188864989
+x-ai/grok-4.6,high,Grok 4.6 (High),,56.5,42.9,80.3,56.3,17.1,,,76.8,53,94.9,,,,,94,94,1793188864989
+x-ai/grok-4.6,xhigh,Grok 4.6 (Xhigh),31,53,44.1,81,57.7,19.7,46.2,60.3,75.9,52.5,93.5,,,,54,89,93,1793836810445
+liquid/lfm-2.5-2.6b,default,LFM2.5-2.6B,,14.4,6.2,5.7,0,0,,,7.7,,55.8,,,,,3,,1793188864989
+nvidia/nemotron-3.5-lightning,default,Nemotron 3.5 Lightning,5.5,32.1,10.6,60.3,7.3,0,14.7,64.3,26.8,3.5,74.3,,,,4,27,25,1793620809958
+upstage/solar-pro4,default,Solar Pro 4,28.2,44.6,29.2,74,30.4,5.4,18.9,75.6,52.7,,89.1,,,,42,55,,1792065644028
+upstage/solar-pro4,default,Solar Pro 4,,48,29.8,70.7,30.3,6.3,,,,28.8,89.1,,,,,,58,1793188864989
+meta/muse-glimmer-30b,high,Muse Glimmer (High),6.3,44.9,22,83.3,14.6,2.6,28,16.4,49,8.5,83.5,,,,7,48,32,1793188864989
+inclusionai/ling-3.0-tiny,default,Ling 3.0 Tiny,,24.2,9.3,60.3,3.4,0,37.9,13.3,26.5,4.4,73.4,,,,,26,26,1793188864989
+meta/muse-spark-1.2,xhigh,Muse Spark 1.2 (Xhigh),,57.4,45.5,79,49,17.7,,,72.2,43.2,90.4,,,,,82,77,1793188864989
+deepseek/deepseek-v4-flash-0731,max,DeepSeek V4 Flash 0731 (Max),,50.3,38.6,79.7,47,16.6,,,69.1,41,90.8,,,,,75,73,1793188864989
+thinkingmachines/inkling-small,default,Inkling Small,12.9,49.7,33.3,75.7,31.6,8.3,31.8,39.5,52.9,23.5,89.5,,,,17,55,48,1793188864989
+anthropic/claude-opus-5,low,Claude Opus 5 (Low),,49.2,43.4,81.3,40.5,23.1,,,66.9,36,88.9,,,,,71,66,1793620809958
+anthropic/claude-opus-5,medium,Claude Opus 5 (Medium),,51.5,51.3,82,49.9,26.9,,,74.3,46.2,91.9,,,,,85,82,1793620809958
+anthropic/claude-opus-5,high,Claude Opus 5 (High),,55.4,52.8,79,55.2,28.3,,,76.5,52.3,93.7,,,,,92,93,1793620809958
+anthropic/claude-opus-5,xhigh,Claude Opus 5 (Xhigh),,55.7,54.4,80.3,59.8,27.7,,,77,55.6,93.7,,,,,95,97,1793188864989
+anthropic/claude-opus-5,max,Claude Opus 5 (Max),44.2,56.4,54.9,79.3,61.5,29.1,60.9,40.6,78,56.5,93.2,,,,75,98,98,1793880011736
+inclusionai/ling-3.0-flash,default,Ling 3.0 Flash,,42,23.7,73,22.8,1.7,,,50.6,19.3,85.5,,,,,51,42,1793620809958
+google/gemini-3.6-flash,high,Gemini 3.6 Flash (High),,53.4,40.8,80,39.7,10.6,,,69.2,29,92.8,,,,,75,58,1793620809958
+google/gemini-3.5-flash-lite,default,Gemini 3.5 Flash-Lite,11.7,41.3,18.8,76,24.7,0,26.5,73.3,49.3,14.3,83.8,,,,13,49,36,1793188864989
+meituan/longcat-2.0,default,LongCat 2.0,,36.3,33.7,65,18.8,2.6,,,45.3,14,78,,,,,44,34,1793620809958
+thinkingmachines/inkling,xhigh,Inkling (Xhigh),12.5,47,31.9,77.3,29,5.4,39.3,32.8,52.1,22.5,87.2,,,,15,53,47,1793188864989
+moonshotai/kimi-k3,low,Kimi K3 (Low),17.4,52.7,25,79.3,31.8,3.1,42.4,23.4,72,29.3,84.2,,,,20,82,59,1793318464806
+moonshotai/kimi-k3,max,Kimi K3 (Max),,59.5,46.9,88.7,52.1,23.4,,,76.2,50,93.5,,,,,90,86,1793620809958
+meta/muse-spark-1.1,xhigh,Muse Spark 1.1 (Xhigh),,58.8,46.2,77.7,35.9,15.1,,,71.3,25.8,89.8,,,,,78,52,1793188864989
+openai/gpt-5.6-luna,off,GPT-5.6 Luna (Non-reasoning),,40.4,7.2,42.7,21.4,0.3,,,39.3,13.4,64.5,,,,,37,34,1793188864989
+openai/gpt-5.6-luna,low,GPT-5.6 Luna (Low),,46.1,19.8,70,25.1,2.6,,,44.2,16.1,83.5,,,,,42,40,1793188864989
+openai/gpt-5.6-luna,medium,GPT-5.6 Luna (Medium),,46.8,25.8,75,31.9,4.9,,,50.7,23.9,85.9,,,,,51,50,1793188864989
+openai/gpt-5.6-luna,high,GPT-5.6 Luna (High),,51.6,33.4,80.3,41.9,16.6,,,63.3,34.6,89.2,,,,,67,64,1793188864989
+openai/gpt-5.6-luna,xhigh,GPT-5.6 Luna (Xhigh),,50.5,37,81.7,45.4,20.6,,,68.6,38.7,89.5,,,,,72,69,1793188864989
+openai/gpt-5.6-luna,max,GPT-5.6 Luna (Max),23.8,53.6,39.5,83.7,48.4,20.6,39.1,7.7,71.4,42.1,91.1,,,,34,78,77,1793836810445
+openai/gpt-5.6-terra,off,GPT-5.6 Terra (Non-reasoning),,45.1,11.4,58.7,30.2,2,32.6,4.4,52.3,23.5,74.6,,,,,54,48,1793188864989
+openai/gpt-5.6-terra,low,GPT-5.6 Terra (Low),,49.9,29.2,71.3,30.9,9.4,39.8,8.7,58.1,25.9,84.3,43.9,59.7,60.5,,61,53,1793188864989
+openai/gpt-5.6-terra,medium,GPT-5.6 Terra (Medium),,50.5,33.3,74,38.7,17.4,40.5,8.7,64.7,30.4,87.2,,62.2,72.8,,68,61,1793188864989
+openai/gpt-5.6-terra,high,GPT-5.6 Terra (High),,52.4,38.5,77.7,44.4,22.9,41.2,9,67.1,36.7,89.6,57.6,64.4,78.4,,71,67,1793188864989
+openai/gpt-5.6-terra,xhigh,GPT-5.6 Terra (Xhigh),,52.3,41.9,79,47.8,27.1,41.3,9.9,70.6,41.4,90.8,62.9,66.3,80.4,,77,75,1793188864989
+openai/gpt-5.6-terra,max,GPT-5.6 Terra (Max),32.3,55,42.9,83,48.1,30,42.3,10.6,76.7,43.2,92.5,57.6,71.2,86.3,57,93,77,1793793611476
+openai/gpt-5.6-sol,off,GPT-5.6 Sol (Non-reasoning),,47.7,16.7,62.3,37.5,5.1,,,65.1,28.1,79,,,,,69,56,1793188864989
+openai/gpt-5.6-sol,low,GPT-5.6 Sol (Low),,56.4,39.4,78,40.7,14.9,,,69.7,31.6,89.8,60.6,66.5,76,,76,62,1793188864989
+openai/gpt-5.6-sol,medium,GPT-5.6 Sol (Medium),,57.4,42.2,80.3,46.6,22.9,,,76.3,39.7,92.6,62.9,69.6,81,,91,71,1793188864989
+openai/gpt-5.6-sol,high,GPT-5.6 Sol (High),,57.8,46,81.7,50.6,25.7,,,77.2,44.2,92.8,62.1,69.2,83.3,,97,79,1793188864989
+openai/gpt-5.6-sol,xhigh,GPT-5.6 Sol (Xhigh),,57.1,47.3,82.3,53.9,28.6,,,78.3,47.4,93.1,61.4,71,84.8,,98,83,1793188864989
+openai/gpt-5.6-sol,max,GPT-5.6 Sol (Max),,57.1,49.5,84,55.9,32.3,,,77.4,50.2,94.1,65.9,72.7,85.1,,97,87,1793188864989
+x-ai/grok-4.5,high,Grok 4.5 (High),,55,42.7,79.3,44.5,15.4,,,72.4,41.2,93.1,,,,,83,74,1793188864989
+anthropic/claude-sonnet-5,off,"Claude Sonnet 5 (Non-reasoning, High)",,,19,70,36,1.1,,,66.4,,80,,,,,70,,1793620809958
+anthropic/claude-sonnet-5,low,Claude Sonnet 5 (Low),,50.1,21.9,67.3,28.8,4.6,,,,,,,,,,,,1793188864989
+anthropic/claude-sonnet-5,medium,Claude Sonnet 5 (Medium),,51.6,30,73.7,33.3,8.6,,,,,,,,,,,,1793620809958
+anthropic/claude-sonnet-5,high,Claude Sonnet 5 (High),,54.3,35.7,76.7,38.1,15.1,,,,,,,,,,,,1793188864989
+anthropic/claude-sonnet-5,xhigh,Claude Sonnet 5 (Xhigh),,54.1,39,76.7,43.3,15.4,,,,,,,,,,,,1793188864989
+anthropic/claude-sonnet-5,max,Claude Sonnet 5 (Max),,54.3,41.3,82,48.5,16.9,,,71.5,43.6,91.1,,,,,79,79,1793620809958
+cohere/north-mini-code:free,default,North Mini Code,,38.8,11.1,37.3,0,0.3,18.4,16.5,36.5,1.1,75.7,31.1,57.6,37.4,,34,13,1793880011736
+z-ai/glm-5.2,off,GLM-5.2 (Non-reasoning),,,9.8,42.3,37.6,3.1,,,46.5,,68.6,,,,,45,,1793188864989
+z-ai/glm-5.2,max,GLM-5.2 (Max),,51.2,41.1,78.3,44.1,20.9,,,68.8,38.4,89.5,50.8,73.3,99.1,,73,68,1793188864989
+moonshotai/kimi-k2.7-code,default,Kimi K2.7 Code,,47.8,35,79.3,27.3,10,,,60.8,21,89.6,44.7,63.1,90.1,,66,44,1793188864989
+anthropic/claude-fable-5,max,"Claude Fable 5 (Max, Opus 4.8 Fallback)",,61,55.5,82.3,55.9,28.6,,,76.5,50.7,92.6,62.9,63.5,98.5,,92,90,1793188864989
+nvidia/nemotron-3-ultra-550b-a55b,on,Nemotron 3 Ultra 550B A55B (Reasoning),11.8,40.3,28.4,79.3,26,3.1,21.2,77.4,49.3,20.1,86.7,36.4,81.4,83.3,14,49,43,1793188864989
+qwen/qwen3.7-plus,default,Qwen3.7 Plus,,46.1,35.6,73,13.7,9.1,,,55.9,17.5,90,47,78,93,,57,40,1793620809958
+minimax/minimax-m3,default,MiniMax-M3,18.9,47.1,39,83,37.5,3.7,44.9,8.6,58.6,29.5,92.9,42.4,82.9,88.9,26,62,60,1793750412754
+stepfun/step-3.7-flash,default,Step 3.7 Flash,,43.9,21.4,73.7,18.2,2.3,,,39.6,,80.9,35.6,67.3,98.5,,38,,1793188864989
+anthropic/claude-opus-4.8,max,Claude Opus 4.8 (Max),,54.4,48.7,77.7,48.1,20.9,,,74.3,41.9,92,58.3,62.2,94.4,,85,76,1793188864989
+qwen/qwen3.7-max,default,Qwen3.7 Max,,49.5,40.5,79,31.8,13.4,,,66,22.5,92.3,50.8,80.5,94.7,,69,47,1793188864989
+x-ai/grok-build-0.1,default,Grok Build 0.1 0616,,,38.3,74.7,28.6,9.1,,,51.5,,89.5,,,,,52,,1793188864989
+google/gemini-3.5-flash,minimal,Gemini 3.5 Flash (Minimal),,,24.1,61.3,,1.4,,,,,82.8,46.2,47.3,58.8,,,,1793188864989
+google/gemini-3.5-flash,medium,Gemini 3.5 Flash (Medium),,,41.3,74.3,,10.9,,,,,92.1,39.4,74.6,95.6,,,,1793188864989
+google/gemini-3.5-flash,high,Gemini 3.5 Flash (High),,53.9,42.7,73.3,35.6,13.1,,,70.1,26,92.2,40.9,76.3,95.3,,76,54,1793188864989
+x-ai/grok-4.3,off,Grok 4.3 (Non-reasoning),,39.4,6.8,32.3,22.4,0,,,35.2,14,65.8,18.9,47.6,65.8,,33,34,1793620809958
+x-ai/grok-4.3,low,Grok 4.3 (Low),,,18.4,74,,0.6,,,,,84.3,26.5,81,88.9,,,,1793188864989
+x-ai/grok-4.3,medium,Grok 4.3 (Medium),,,30,75,,4.9,,,,,89,30.3,83.3,91.2,,,,1793188864989
+x-ai/grok-4.3,high,Grok 4.3 (High),,48.3,37.2,73,22.3,8,,,42.2,15.5,90.1,37.9,81.3,97.7,,39,37,1793188864989
+mistralai/mistral-medium-3-5,default,Mistral Medium 3.5,4.6,40.2,13.8,69.3,13.4,0,23,19.8,46.9,7,74.8,33.3,68.8,94.2,2,47,28,1793836810445
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,default,Nemotron 3 Nano Omni 30B A3B Reasoning,,,4.8,39.7,0,0,,,13.8,,46.9,8.3,63.2,45.3,,10,,1793188864989
+qwen/qwen3.6-35b-a3b,off,Qwen3.6 35B A3B (Non-reasoning),,,13.9,64.3,17.7,0,,,28.1,,81.7,25.8,36.2,85.1,,28,,1793188864989
+qwen/qwen3.6-35b-a3b,on,Qwen3.6 35B A3B (Reasoning),,36.6,22.2,71.7,20,0.3,,,41.9,13.1,84.1,34.8,64.4,95.3,,39,33,1793188864989
+qwen/qwen3.6-27b,off,Qwen3.6 27B (Non-reasoning),,,15.1,66.7,23.5,0.9,,,46.6,,82.9,21.2,45.7,93.6,,46,,1793188864989
+qwen/qwen3.6-27b,on,Qwen3.6 27B (Reasoning),,42.8,23.1,77.3,24.6,1.1,,,53.7,18.5,84.2,34.8,67.6,94.2,,56,42,1793620809958
+openai/gpt-5.5-pro,xhigh,GPT-5.5 Pro (Xhigh),,,,,,30.6,,,,,,,,,,,,1791216944885
+openai/gpt-5.5,off,GPT-5.5 (Non-reasoning),,,13.7,64,23.9,1.4,,,56.5,,76.8,49.2,46.1,69.3,,60,,1793188864989
+openai/gpt-5.5,low,GPT-5.5 (Low),,,32.7,81,27.7,8,,,60.9,,91,52.3,64.4,83.9,,66,,1793188864989
+openai/gpt-5.5,medium,GPT-5.5 (Medium),,54.5,42.4,83,37.1,18.6,,,71.5,29.5,92.6,57.6,71,91.8,,79,60,1793620809958
+openai/gpt-5.5,high,GPT-5.5 (High),,56.1,45,84.3,41.8,25.4,,,71.6,34.3,93.2,59.8,71.6,93,,81,64,1793188864989
+openai/gpt-5.5,xhigh,GPT-5.5 (Xhigh),,55.8,45.8,84.3,43,27.1,,,74.9,36.4,93.5,60.6,75.9,93.9,,87,66,1793188864989
+deepseek/deepseek-v4-pro,off,DeepSeek V4 Pro 0813 (Non-reasoning),12.6,39.9,10.6,50.7,28.3,0,38.6,6.1,,,,,,,16,,,1793836810445
+deepseek/deepseek-v4-pro,off,DeepSeek V4 Pro 0424 (Non-reasoning),,,8.2,53,,0.9,,,,,71.7,36.4,45.8,91.2,,,,1793188864989
+deepseek/deepseek-v4-pro,high,DeepSeek V4 Pro 0424 (High),,,35.2,70.3,33,10,,,58.7,,90.5,41.7,71.3,94.2,,63,,1793188864989
+deepseek/deepseek-v4-pro,max,DeepSeek V4 Pro 0424 (Max),,50.8,37.5,74.7,33.3,12.9,,,59.4,26.3,88.8,46.2,76.5,96.2,,64,54,1793188864989
+deepseek/deepseek-v4-flash,off,DeepSeek V4 Flash 0420 (Non-reasoning),,,7.8,41.7,,0.3,,,,,71.6,34.1,47.2,94.4,,,,1793188864989
+deepseek/deepseek-v4-flash,high,DeepSeek V4 Flash 0420 (High),,40.2,30.3,72,25.5,3.4,,,52,26.3,86.7,38.6,73.5,95.6,,52,54,1793188864989
+deepseek/deepseek-v4-flash,max,DeepSeek V4 Flash 0420 (Max),,45.3,34.8,74.3,27.3,7.1,,,56.2,22.2,89.4,35.6,79.2,95,,59,46,1793188864989
+tencent/hy3-preview,off,Hy3-preview (Non-reasoning),,,7,42,,0.3,,,,,73.2,31.8,48,67.5,,,,1793188864989
+tencent/hy3-preview,on,Hy3-preview (Reasoning),,,27.8,64.7,,4.6,,,,,86.7,34.1,63.1,92.7,,,,1793188864989
+tencent/hy3-preview,default,Hy3,,48.6,33.5,79,28.5,4.9,,,58.8,24.1,89.7,,,,,63,52,1793188864989
+xiaomi/mimo-v2.5-pro,off,MiMo-V2.5-Pro (Non-reasoning),,,14.8,41.7,,1.1,,,,,76.2,35.6,42.7,72.5,,,,1793188864989
+xiaomi/mimo-v2.5-pro,on,MiMo-V2.5-Pro (Reasoning),,50.6,35.7,79.7,31.4,4,,,60.2,21.3,86.6,43.2,79.9,94.2,,65,45,1793620809958
+xiaomi/mimo-v2.5,default,MiMo-V2.5,,43.9,27.2,73,25.3,3.7,,,56.8,15.8,84.9,41.7,67.1,90.6,,60,38,1793188864989
+moonshotai/kimi-k2.6,off,Kimi K2.6 (Non-reasoning),,,19.6,69.7,,1.4,,,,,78.8,37.9,44.3,93.9,,,,1793188864989
+moonshotai/kimi-k2.6,on,Kimi K2.6 (Reasoning),,51.5,37.5,81,27.3,8,,,61.8,20.5,91.1,43.9,76,95.9,,67,44,1793188864989
+anthropic/claude-opus-4.7,off,"Claude Opus 4.7 (Non-reasoning, High)",,,33.3,75.7,,5.1,,,,,88.5,54.5,43.6,74,,,,1793188864989
+anthropic/claude-opus-4.7,max,Claude Opus 4.7 (Max),,,42.3,78.7,43.1,12,,,73.6,38.6,91.4,51.5,58.6,88.6,,84,68,1793188864989
+z-ai/glm-5.1,off,GLM-5.1 (Non-reasoning),,,27.9,53.3,,0,,,,,83.9,35.6,52,97.1,,,,1793188864989
+z-ai/glm-5.1,on,GLM-5.1 (Reasoning),,44.8,30.1,73.7,31.3,4.6,,,55.8,23.9,86.8,43.2,76.3,97.7,,57,50,1793188864989
+google/gemma-4-26b-a4b-it,off,Gemma 4 26B A4B (Non-reasoning),,,11.5,42.3,,0,,,,,71.4,25,45.4,40.4,,,,1793188864989
+google/gemma-4-26b-a4b-it,on,Gemma 4 26B A4B (Reasoning),,40,19.3,65.7,3.6,0,,,39.3,2.9,79.2,13.6,72.4,43.6,,37,24,1793620809958
+google/gemma-4-31b-it,off,Gemma 4 31B (Non-reasoning),,,11.8,46.7,2.7,0,,,33.2,,76.3,30.3,53.5,65.5,,32,,1793620809958
+google/gemma-4-31b-it,on,Gemma 4 31B (Reasoning),4.4,45.5,23.6,69.7,6.3,1.4,19.9,14.5,43.4,4.2,85.7,36.4,75.6,59.9,1,41,26,1793880011736
+qwen/qwen3.6-plus,default,Qwen3.6 Plus,,,27.8,78.3,24.8,2.9,,,54.5,,88.2,43.9,75.2,97.7,,56,,1793620809958
+z-ai/glm-5v-turbo,on,GLM 5V Turbo (Reasoning),,,17.1,70.3,,0.6,,,,,80.9,32.6,61.1,98.5,,,,1793188864989
+x-ai/grok-4.20,off,Grok 4.20 0309 (Non-reasoning),,,24.5,25.3,,0,,,,,78.5,22,47.8,69.6,,,,1793188864989
+x-ai/grok-4.20,off,Grok 4.20 0309 v2 (Non-reasoning),,,27.9,23.3,,0.3,,,,,77.6,16.7,49.3,59.9,,,,1793188864989
+x-ai/grok-4.20,on,Grok 4.20 0309 (Reasoning),,,32.4,67.7,,6,,,,,88.5,40.9,82.9,96.5,,,,1793188864989
+x-ai/grok-4.20,on,Grok 4.20 0309 v2 (Reasoning),,,34.5,69,,6.6,,,,,91.1,37.9,81.2,93,,,,1793188864989
+minimax/minimax-m2.7,default,MiniMax-M2.7,,50.1,29.6,78.3,25.8,0.6,,,52.6,15.3,87.4,39.4,75.7,84.8,,54,36,1793188864989
+openai/gpt-5.4-nano,off,GPT-5.4 nano (Non-reasoning),,,4.1,29.7,,0,,,,,55.8,24.2,32.7,34.8,,,,1793188864989
+openai/gpt-5.4-nano,medium,GPT-5.4 nano (Medium),,,15.9,67.3,,5.1,,,,,76.1,33.3,64.4,52.6,,,,1793188864989
+openai/gpt-5.4-nano,xhigh,GPT-5.4 nano (Xhigh),,47.2,28.3,76.7,22.7,9.3,,,56.1,16,81.7,42.4,75.9,76,,58,39,1793620809958
+openai/gpt-5.4-mini,off,GPT-5.4 mini (Non-reasoning),,,5.9,37,4.9,0,,,,,60.6,18.2,38.8,23.4,,,,1793188864989
+openai/gpt-5.4-mini,medium,GPT-5.4 mini (Medium),,,18.6,67,,2.9,,,,,82.3,34.1,64.8,36.5,,,,1793188864989
+openai/gpt-5.4-mini,xhigh,GPT-5.4 mini (Xhigh),,52.1,28.1,77,26.1,10,,,56.1,17.9,87.5,52.3,73.3,83.3,,58,41,1793188864989
+mistralai/mistral-small-2603,off,Mistral Small 4 (Non-reasoning),,,3.8,28.3,,0.3,,,,,57.1,10.6,32.8,18.4,,,,1793188864989
+mistralai/mistral-small-2603,on,Mistral Small 4 (Reasoning),4.3,38.8,9.9,49.7,0,0.3,21.4,33.4,26.6,0.8,76.9,17.4,48.2,41.2,0,27,3,1793318464806
+z-ai/glm-5-turbo,default,GLM-5-Turbo,,,27.8,71.7,,0.3,,,,,84.7,33.3,73.2,98.5,,,,1793188864989
+nvidia/nemotron-3-super-120b-a12b,on,Nemotron 3 Super 120B A12B (Reasoning),,36.2,20.8,65.7,0,3.1,,,37.7,1.7,80,28.8,71.5,67.8,,36,21,1793188864989
+qwen/qwen3.5-9b,off,Qwen3.5 9B (Non-reasoning),,,9.4,46,,0.6,,,23.5,,78.6,18.2,37.8,85.1,,22,,1793188864989
+qwen/qwen3.5-9b,on,Qwen3.5 9B (Reasoning),,29.5,14.9,70,0,0.3,,,28.7,1.2,80.6,24.2,66.7,86.8,,29,15,1793188864989
+openai/gpt-5.4-pro,xhigh,GPT-5.4 Pro (Xhigh),,,,,,30,,,,,,,,,,,,1791216944885
+openai/gpt-5.4,off,GPT-5.4 (Non-reasoning),,,11.3,58.3,,0.6,,,,,74.8,37.9,48.4,36,,,,1793188864989
+openai/gpt-5.4,low,GPT-5.4 (Low),,,30.8,76.7,,7.4,,,,,87.1,43.2,65.9,74.6,,,,1793188864989
+openai/gpt-5.4,xhigh,GPT-5.4 (Xhigh),,,43.7,82,37.8,23.4,,,71.1,,92,57.6,73.9,87.1,,78,,1793188864989
+inception/mercury-2,default,Mercury 2,,37.7,17.1,43.7,0.1,0.8,,,31.1,1.6,77,26.5,69.8,70.8,,31,19,1793188864989
+google/gemini-3.1-flash-lite-preview,default,Gemini 3.1 Flash-Lite,6.2,43.4,17.2,74.3,0,1.1,31.7,18.3,34.7,1.6,82.2,24.2,77.2,31.3,5,33,19,1793793611476
+qwen/qwen3.5-35b-a3b,off,Qwen3.5 35B A3B (Non-reasoning),,,13.4,63,5.8,0.6,,,37,,81.9,10.6,44.5,86.3,,35,,1793188864989
+qwen/qwen3.5-35b-a3b,on,Qwen3.5 35B A3B (Reasoning),,,21,72,,0.9,,,,,84.5,26.5,72.5,89.2,,,,1793188864989
+qwen/qwen3.5-27b,off,Qwen3.5 27B (Non-reasoning),,,13.9,64,,0.3,,,,,84.2,31.8,46.9,87.1,,,,1793188864989
+qwen/qwen3.5-27b,on,Qwen3.5 27B (Reasoning),,,23.9,77.7,,0.9,,,,,85.8,32.6,75.6,93.9,,,,1793188864989
+qwen/qwen3.5-122b-a10b,off,Qwen3.5 122B A10B (Non-reasoning),,,15.9,61.3,10.8,0.9,,,43.3,,82.7,29.5,50.8,84.5,,40,,1793188864989
+qwen/qwen3.5-122b-a10b,on,Qwen3.5 122B A10B (Reasoning),,39.7,25.2,76.3,16.1,0.6,,,45.7,7.6,85.7,31.1,75.7,93.6,,44,29,1793188864989
+openai/gpt-5.3-codex,xhigh,GPT-5.3 Codex (Xhigh),,,42.5,83.3,,16.9,,,,,91.5,53,75.4,86,,,,1793188864989
+google/gemini-3.1-pro-preview,low,Gemini 3 Pro Preview (Low),,,29.5,74,,0,,,,,88.7,34.1,49.7,68.1,,,,1793275268124
+google/gemini-3.1-pro-preview,high,Gemini 3 Pro Preview (High),,,39.7,76,,9.1,,,,,90.8,41.7,70.4,87.1,,,,1793275268124
+google/gemini-3.1-pro-preview,default,Gemini 3.1 Pro Preview,,58.7,47,82,14.9,17.7,,,68.8,8.2,94.1,53.8,77.1,95.6,,73,30,1793620809958
+anthropic/claude-sonnet-4.6,off,"Claude Sonnet 4.6 (Non-reasoning, Low)",,,11.2,69.3,,0.9,,,,,79.7,42.4,42.4,78.9,,,,1793188864989
+anthropic/claude-sonnet-4.6,off,"Claude Sonnet 4.6 (Non-reasoning, High)",,,13.3,68.3,,0.9,,,,,79.9,46.2,41.2,79.5,,,,1793188864989
+anthropic/claude-sonnet-4.6,max,Claude Sonnet 4.6 (Max),,50.1,33.6,80,37,3.1,,,63,31.8,87.5,53,56.6,75.7,,67,62,1793188864989
+qwen/qwen3.5-397b-a17b,off,Qwen3.5 397B A17B (Non-reasoning),,,19.8,64.3,,0.9,,,,,86.1,35.6,51.6,83.9,,,,1793188864989
+qwen/qwen3.5-397b-a17b,on,Qwen3.5 397B A17B (Reasoning),,44.8,29,77.3,15,1.7,,,48.2,8.3,89.3,40.9,78.8,95.6,,48,31,1793620809958
+minimax/minimax-m2.5,default,MiniMax-M2.5,,,20.5,73.3,,1.1,,,,,84.8,34.8,71.6,95.3,,,,1793188864989
+z-ai/glm-5,off,GLM-5 (Non-reasoning),,,7.6,43.7,,0,,,,,66.6,39.4,55.2,97.4,,,,1793188864989
+z-ai/glm-5,on,GLM-5 (Reasoning),,,29.3,75.7,,2,,,,,82,43.2,72.3,98.2,,,,1793188864989
+anthropic/claude-opus-4.6,off,"Claude Opus 4.6 (Non-reasoning, High)",,,19.1,67,,2.8,,,,,84,48.5,44.6,84.8,,,,1793188864989
+anthropic/claude-opus-4.6,max,Claude Opus 4.6 (Max),,,39.9,78,,12.6,,,,,89.6,46.2,53.1,92.1,,,,1793188864989
+qwen/qwen3-coder-next,default,Qwen3 Coder Next,,36.2,10.1,47,1.1,0,,,36.2,0.9,73.7,18.2,35.2,79.5,,34,7,1793188864989
+stepfun/step-3.5-flash,default,Step 3.5 Flash 2603,,,24.5,63,,2.3,,,,,82.6,32.6,66.5,87.4,,,,1793188864989
+stepfun/step-3.5-flash,default,Step 3.5 Flash,,,21.1,50,,2.5,,,,,83.1,27.3,64.6,94.4,,,,1793188864989
+moonshotai/kimi-k2.5,off,Kimi K2.5 (Non-reasoning),,,13.2,67.3,,0.6,,,,,78.9,18.9,43.7,81.3,,,,1793188864989
+moonshotai/kimi-k2.5,on,Kimi K2.5 (Reasoning),,,30.7,78,17.3,3.1,,,46.8,,87.9,34.8,70.2,95.9,,47,,1793620809958
+z-ai/glm-4.7-flash,off,GLM-4.7-Flash (Non-reasoning),,,5,20.3,,0,,,,,45.2,3.8,46.3,91.8,,,,1793188864989
+z-ai/glm-4.7-flash,on,GLM-4.7-Flash (Reasoning),,,7.6,41.7,,0.3,,,,,58.1,22,60.8,98.8,,,,1793188864989
+openai/gpt-5.2-codex,xhigh,GPT-5.2 Codex (Xhigh),,,35.7,82.3,,8.7,,,,,89.9,37.1,77.6,92.1,,,,1793188864989
+z-ai/glm-4.7,off,GLM-4.7 (Non-reasoning),,,6.4,40.7,,0,,,,,66.4,30.3,54.6,94.2,,,,1793275268124
+z-ai/glm-4.7,on,GLM-4.7 (Reasoning),,,27.4,71,26.1,1.7,,,45.3,,85.9,31.8,67.9,95.9,,44,,1793275268124
+google/gemini-3-flash-preview,off,Gemini 3 Flash Preview (Non-reasoning),,,15,55.3,,1.4,,,,,81.2,31.8,55.1,43.3,,,,1793275268124
+google/gemini-3-flash-preview,on,Gemini 3 Flash Preview (Reasoning),,,36.6,78,,8.6,,,,,89.8,38.6,78,80.4,,,,1793275268124
+nvidia/nemotron-3-nano-30b-a3b,off,NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning),,,4.6,10.7,0,0,,,,,39.9,12.1,37.5,25.4,,,,1793275268124
+nvidia/nemotron-3-nano-30b-a3b,on,NVIDIA Nemotron 3 Nano 30B A3B (Reasoning),,30.6,11.4,38,0,0.9,,,14.4,1,75.7,13.6,71.1,40.9,,11,10,1793275268124
+openai/gpt-5.2,off,GPT-5.2 (Non-reasoning),,,8,45.7,,0.6,,,,,71.2,31.8,47.4,46.5,,,,1793275268124
+openai/gpt-5.2,medium,GPT-5.2 (Medium),,,26.7,70.3,,7.9,,,,,86.4,43.2,65.2,74.3,,,,1793275268124
+openai/gpt-5.2,xhigh,GPT-5.2 (Xhigh),,,37.7,82.7,,11.6,,,,,90.3,47,75.4,84.8,,,,1793275268124
+mistralai/devstral-2512,default,Devstral 2,,32.8,3.6,32.3,2.6,0,,,31.3,2.3,59.4,18.9,38.1,24.9,,31,23,1793275268124
+z-ai/glm-4.6v,off,GLM-4.6V (Non-reasoning),,,3.7,17,,0,,,,,56.6,3,27.9,30.7,,,,1793275268124
+z-ai/glm-4.6v,on,GLM-4.6V (Reasoning),,,9.6,48.7,,0,,,,,71.9,14.4,30.1,31.6,,,,1793275268124
+amazon/nova-2-lite-v1,off,Nova 2.0 Lite (Non-reasoning),,,2.9,18.7,,0,,,,,60.3,6.8,40.5,62,,,,1793275268124
+amazon/nova-2-lite-v1,low,Nova 2.0 Lite (Low),,,4,54.3,,0,,,,,69.8,3.8,61.2,71.9,,,,1793275268124
+amazon/nova-2-lite-v1,medium,Nova 2.0 Lite (Medium),,,9,60,,0,,,,,76.8,17.4,68.5,75.7,,,,1793275268124
+amazon/nova-2-lite-v1,high,Nova 2.0 Lite (High),,,11.6,60.3,0,0.3,,,23,,81.1,16.7,70.7,72.8,,22,,1793275268124
+mistralai/ministral-14b-2512,default,Ministral 3 14B,,23.8,4.6,26.3,0,0,,,14.4,1.1,57.2,4.5,32,27.2,,11,13,1793275268124
+mistralai/ministral-8b-2512,default,Ministral 3 8B,,20.7,4.3,25.7,0,0,,,9.7,0.6,47.1,4.5,29.1,26.6,,5,2,1793275268124
+mistralai/ministral-3b-2512,default,Ministral 3 3B,,15.3,5.4,17,0,0,,,4.8,0.8,35.8,0,26.8,24.9,,1,3,1793275268124
+mistralai/mistral-large-2512,default,Mistral Large 3,,36.6,4.2,36,0,0,,,20.1,1,68,15.9,36.2,24.6,,17,10,1793275268124
+deepseek/deepseek-v3.2,on,DeepSeek V3.2 (Reasoning),,,24.6,73.3,10,2.9,,,44.2,,84,35.6,60.7,90.6,,42,,1793275268124
+anthropic/claude-opus-4.5,off,Claude Opus 4.5 (Non-reasoning),,,13.2,70.7,,0.3,,,,,81,40.9,43,86.3,,,,1793275268124
+anthropic/claude-opus-4.5,on,Claude Opus 4.5 (Reasoning),,,30.1,77.3,,4.6,,,,,86.6,47,58,89.5,,,,1793275268124
+openai/gpt-5.1,off,GPT-5.1 (Non-reasoning),,,5.3,45,,0,,,,,64.3,22.7,43.2,46.5,,,,1793275268124
+openai/gpt-5.1,high,GPT-5.1 (High),,,28.5,80,16.7,4.9,,,49.4,,87.3,45.5,72.9,81.9,,50,,1793275268124
+openai/gpt-5.1-codex,high,GPT-5.1 Codex (High),,,25.7,69.3,,5.7,,,,,86,34.8,70,83,,,,1793275268124
+openai/gpt-5.1-codex-mini,high,GPT-5.1 Codex mini (High),,,18.5,66.7,,0,,,,,81.3,33.3,67.9,62.9,,,,1793275268124
+moonshotai/kimi-k2-thinking,default,Kimi K2 Thinking,,,23.8,72,,2.6,,,,,83.8,31.1,68.1,93,,,,1793275268124
+moonshotai/kimi-k2-thinking,default,K2 Think V2,,,10.1,57,0,0,,,21,,71.3,6.8,62.8,25.4,,19,,1793188864989
+amazon/nova-premier-v1,default,Nova Premier,,,4.2,34.3,,0,,,,,56.9,6.8,36.2,38.3,,,,1793275268124
+anthropic/claude-haiku-4.5,off,Claude 4.5 Haiku (Non-reasoning),,,4.2,49.7,,0,,,,,64.6,27.3,42,32.5,,,,1793275268124
+anthropic/claude-haiku-4.5,on,Claude 4.5 Haiku (Reasoning),7.4,42.2,10.4,74.3,12,0,17.5,76.6,43.9,8,67.2,27.3,54.3,54.7,8,42,30,1793836810445
+qwen/qwen3-vl-8b-instruct,default,Qwen3 VL 8B Instruct,,,2.7,16.7,,0,,,,,42.7,2.3,32.3,29.2,,,,1793275268124
+qwen/qwen3-vl-30b-a3b-thinking,on,Qwen3 VL 30B A3B (Reasoning),,,8.9,,,0,,,,,72,5.3,45.1,19.9,,,,1793275268124
+qwen/qwen3-vl-30b-a3b-instruct,default,Qwen3 VL 30B A3B Instruct,,,6.3,,,0,,,,,69.5,6.1,33.1,19,,,,1793275268124
+z-ai/glm-4.6,off,GLM-4.6 (Non-reasoning),,,5.5,26.3,,0,,,,,63.2,28.8,36.7,76.9,,,,1793275268124
+z-ai/glm-4.6,on,GLM-4.6 (Reasoning),,,14.5,54,13.2,1.1,,,45.8,,78,25,43.4,70.5,,45,,1793275268124
+anthropic/claude-sonnet-4.5,off,Claude 4.5 Sonnet (Non-reasoning),,,7.2,54,,0,,,,,72.7,28.8,42.7,70.5,,,,1793275268124
+anthropic/claude-sonnet-4.5,on,Claude 4.5 Sonnet (Reasoning),,45.7,17.8,72.3,20.8,1.1,,,52.1,15.8,83.4,35.6,57.3,78.1,,53,38,1793275268124
+deepseek/deepseek-v3.2-exp,off,DeepSeek V3.2 Exp (Non-reasoning),,,9,44.7,,1.4,,,,,73.8,25,43.1,33.9,,,,1793275268124
+deepseek/deepseek-v3.2-exp,off,DeepSeek V3.2 (Non-reasoning),,,11.2,45.7,,0.9,,,,,75.1,32.6,49,78.9,,,,1793275268124
+deepseek/deepseek-v3.2-exp,on,DeepSeek V3.2 Exp (Reasoning),,,14.9,72.3,,1.4,,,,,79.7,31.1,54.1,33.9,,,,1793275268124
+qwen/qwen3-vl-235b-a22b-instruct,off,Qwen3 235B A22B (Non-reasoning),,,4.2,0,,0,,,,,61.3,6.1,36.6,27.2,,,,1793275268124
+qwen/qwen3-vl-235b-a22b-instruct,default,Qwen3 VL 235B A22B Instruct,,,6.6,32.7,,0,,,,,71.2,6.8,42.7,35.1,,,,1793275268124
+deepseek/deepseek-v3.1-terminus,off,DeepSeek V3.1 Terminus (Non-reasoning),,,8.7,45.3,,0,,,,,75.1,31.8,41.2,37.1,,,,1793275268124
+deepseek/deepseek-v3.1-terminus,on,DeepSeek V3.1 Terminus (Reasoning),,38,16.4,69.3,10.9,1.7,,,43.5,6.8,79.2,30.3,57,37.1,,41,27,1793275268124
+qwen/qwen3-next-80b-a3b-instruct,default,Qwen3 Next 80B A3B Instruct,,,7.6,52.7,,0,,,,,73.8,7.6,39.7,21.6,,,,1793275268124
+moonshotai/kimi-k2-0905,default,Kimi K2 0905,,,6.4,53,,0,,,,,76.7,23.5,41.7,73.4,,,,1793275268124
+nousresearch/hermes-4-405b,off,Hermes 4 - Llama-3.1 405B (Non-reasoning),,,4.2,22,,0,,,,,53.6,9.8,34.8,26.6,,,,1793275268124
+nousresearch/hermes-4-405b,on,Hermes 4 - Llama-3.1 405B (Reasoning),,,10.9,22.3,,0.3,,,,,72.7,11.4,32.7,22.2,,,,1793275268124
+deepseek/deepseek-chat-v3.1,off,DeepSeek V3.1 (Non-reasoning),,,6.7,47,,0,,,,,73.5,24.2,37.8,34.8,,,,1793275268124
+deepseek/deepseek-chat-v3.1,on,DeepSeek V3.1 (Reasoning),,,14.3,56.7,,2,,,,,77.9,25,41.5,37.4,,,,1793275268124
+mistralai/mistral-medium-3.1,default,Mistral Medium 3.1,,32.4,4.7,42.7,0,0,,,20.5,1.9,58.8,10.6,39.8,40.6,,18,22,1793275268124
+z-ai/glm-4.5v,off,GLM-4.5V (Non-reasoning),,,3.5,0,,0,,,,,57.3,6.8,28.6,19.6,,,,1793275268124
+z-ai/glm-4.5v,on,GLM-4.5V (Reasoning),,,6.3,0,,0,,,,,68.4,5.3,34.2,22.5,,,,1793275268124
+openai/gpt-5,minimal,GPT-5 (Minimal),,,6,,,0,,,,,67.3,18.2,45.6,67,,,,1793275268124
+openai/gpt-5,low,GPT-5 (Low),,,19.6,,,1.1,,,,,80.8,26.5,66.6,84.2,,,,1793275268124
+openai/gpt-5,medium,GPT-5 (Medium),,,25.4,76,,0,,,,,84.2,37.9,70.6,86.5,,,,1793275268124
+openai/gpt-5,high,GPT-5 (High),,,28.5,78.2,21.3,5.7,,,37.8,,85.4,32.6,73.1,84.8,,36,,1793275268124
+openai/gpt-5-mini,minimal,GPT-5 mini (Minimal),,,5.1,39.3,,0,,,,,68.7,14.4,45.6,31.9,,,,1793275268124
+openai/gpt-5-mini,medium,GPT-5 mini (Medium),,,15.9,72.3,,1.4,,,,,80.3,28.8,71.2,71.1,,,,1793275268124
+openai/gpt-5-mini,high,GPT-5 mini (High),,39,21.5,72.3,13.7,0,,,15.6,6.8,82.8,33.3,75.4,68.4,,13,27,1793275268124
+openai/gpt-5-nano,minimal,GPT-5 nano (Minimal),,,4,20,,0,,,,,42.8,6.8,32.5,25.7,,,,1793275268124
+openai/gpt-5-nano,medium,GPT-5 nano (Medium),,,8.7,43.7,,0,,,,,67,17.4,65.9,30.4,,,,1793275268124
+openai/gpt-5-nano,high,GPT-5 nano (High),,,9.5,45,,0,,,,,67.6,12.1,67.6,36.5,,,,1793275268124
+openai/gpt-oss-120b,low,gpt-oss-120b (Low),,,5.9,46,0,0,,,21.2,,67.2,5.3,58.3,45,,19,,1793275268124
+openai/gpt-oss-120b,high,gpt-oss-120b (High),,34,19.6,52,5.8,1.1,,,30.4,3.7,78.2,23.5,69,65.8,,30,25,1793275268124
+openai/gpt-oss-20b,low,gpt-oss-20b (Low),,,5.3,31,,0,,,,,61.1,4.5,57.8,50.3,,,,1793275268124
+openai/gpt-oss-20b,high,gpt-oss-20b (High),,38.9,11,34.7,0,1.4,,,20.7,1.2,68.8,10.6,65.1,60.2,,18,15,1793275268124
+anthropic/claude-opus-4.1,on,Claude 4.1 Opus (Reasoning),,,12.5,76,,0,,,,,80.9,34.3,55.4,71.4,,,,1793275268124
+qwen/qwen3-coder-30b-a3b-instruct,default,Qwen3 Coder 30B A3B Instruct,,,3.8,32.7,,0,,,,,51.6,15.2,32.7,34.5,,,,1793275268124
+qwen/qwen3-30b-a3b-instruct-2507,off,Qwen3 30B A3B (Non-reasoning),,,4.6,0,,0,,,,,51.5,6.8,31.9,22.2,,,,1793275268124
+qwen/qwen3-30b-a3b-instruct-2507,default,Qwen3 30B A3B 2507 Instruct,,,6.9,26.3,,0,,,,,65.9,6.1,33.1,10.2,,,,1793275268124
+z-ai/glm-4.5,on,GLM-4.5 (Reasoning),,,13,52.7,,0,,,,,78.2,22,44.1,43,,,,1793275268124
+z-ai/glm-4.5-air,default,GLM-4.5-Air,,,7,46.7,,0,,,,,73.3,20.5,37.6,46.5,,,,1793275268124
+qwen/qwen3-235b-a22b-thinking-2507,on,Qwen3 235B A22B 2507 (Reasoning),,41.4,15.9,72,0,0,,,22.1,1.3,79,13.6,51.2,53.2,,21,17,1793275268124
+qwen/qwen3-coder,default,Qwen3 Coder 480B A35B Instruct,,,4.5,45.7,,0,,,,,61.8,18.9,40.5,43.6,,,,1793275268124
+google/gemini-2.5-flash-lite,off,Gemini 2.5 Flash-Lite (Non-reasoning),,,3.7,32,,0,,,,,47.4,2.3,31.5,19,,,,1793275268124
+google/gemini-2.5-flash-lite,off,Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning),,,5.1,49.7,,0,,,,,65.1,7.6,41.8,30.4,,,,1793275268124
+google/gemini-2.5-flash-lite,on,Gemini 2.5 Flash-Lite (Reasoning),,,6.8,55.7,,0,,,,,62.5,4.5,49.9,18.4,,,,1793275268124
+google/gemini-2.5-flash-lite,on,Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning),,,7,64.7,,0,,,,,70.9,12.9,52.6,30.7,,,,1793275268124
+qwen/qwen3-235b-a22b-2507,default,Qwen3 235B A22B 2507 Instruct,,,11.1,33.9,,0,,,,,75.3,15.2,46.1,33.3,,,,1793275268124
+moonshotai/kimi-k2,low,K2-V2 (Low),,,3.6,20.3,,0,,,,,54.1,4.5,41,20.8,,,,1793275268124
+moonshotai/kimi-k2,medium,K2-V2 (Medium),,,4.4,28,,0,,,,,59.8,8.3,55.1,24.9,,,,1793275268124
+moonshotai/kimi-k2,high,K2-V2 (High),,,10.5,35,,0,,,,,68.1,9.8,60.1,27.8,,,,1793275268124
+moonshotai/kimi-k2,default,Kimi K2,,,7.4,53,,0,,,,,76.6,15.9,41.5,61.1,,,,1793275268124
+minimax/minimax-m1,default,MiniMax M1 40k,,,7.8,,,,,,,,68.2,2.3,41.2,31.6,,,,1793275268124
+minimax/minimax-m1,default,MiniMax M1 80k,,,8.9,57.7,,0,,,,,69.7,3,41.8,34.2,,,,1793275268124
+google/gemini-2.5-flash,off,Gemini 2.5 Flash (Non-reasoning),,,4.7,49.9,,1.4,,,,,68.3,12.1,39,14.9,,,,1793275268124
+google/gemini-2.5-flash,off,Gemini 2.5 Flash Preview (Non-reasoning),,,3.8,,,,,,,,59.4,,,,,,,1793188864989
+google/gemini-2.5-flash,off,Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning),,,8.7,60,,0,,,,,76.6,14.4,43.5,28.4,,,,1793275268124
+google/gemini-2.5-flash,on,Gemini 2.5 Flash Preview (Sep '25) (Reasoning),,,13.8,71,,0.3,,,,,79.3,16.7,52.3,45.6,,,,1793275268124
+google/gemini-2.5-flash,on,Gemini 2.5 Flash (Reasoning),,,12.1,65.3,,1.1,,,,,79,13.6,50.3,31.6,,,,1793275268124
+google/gemini-2.5-flash,on,Gemini 2.5 Flash Preview (Reasoning),,,12.1,,,,,,,,69.8,,,,,,,1793188864989
+google/gemini-2.5-pro,default,Gemini 2.5 Pro,,46.3,22.5,69,0,2.6,,,33.3,1.6,84.4,26.5,48.7,54.1,,32,19,1793275268124
+google/gemini-2.5-pro,may' 25,Gemini 2.5 Pro Preview (May' 25),,,19.9,,,,,,,,82.2,,,,,,,1793188864989
+openai/o3-pro,default,o3-pro,,,,,,,,,,,84.5,,,,,,,1793188864989
+deepseek/deepseek-r1-0528,may '25,DeepSeek R1 0528 (May '25),,,15.8,55.7,,1.4,,,,,81.3,15.9,39.6,36.5,,,,1793275268124
+mistralai/mistral-medium-3,default,Mistral Medium 3,,,4.1,31.3,,0,,,,,57.8,3.8,39.3,24.3,,,,1793275268124
+qwen/qwen3-30b-a3b,on,Qwen3 30B A3B (Reasoning),,,6.2,0,,0,,,,,61.6,2.3,41.5,26,,,,1793275268124
+qwen/qwen3-14b,off,Qwen3 14B (Non-reasoning),,,4.1,0,,0,,,,,47,5.3,23.9,32.2,,,,1793275268124
+qwen/qwen3-14b,on,Qwen3 14B (Reasoning),,30.7,4.5,0,0,0,,,13.8,0.9,60.4,3.8,40.5,34.5,,10,7,1793275268124
+qwen/qwen3-32b,off,Qwen3 32B (Non-reasoning),,,4.1,0,,,,,,,53.5,,31.5,,,,,1793275268124
+qwen/qwen3-32b,on,Qwen3 32B (Reasoning),,36,7.4,0,0,0.3,,,15.3,0.9,66.8,3,36.3,29.8,,12,7,1793275268124
+openai/o3,default,o3,,,20.1,74.7,,1.1,,,,,82.7,37.1,71.4,80.7,,,,1793275268124
+openai/gpt-4.1,default,GPT-4.1,,,4.2,68.3,,0,,,,,66.6,13.6,43,47.1,,,,1793275268124
+openai/gpt-4.1-mini,default,GPT-4.1 mini,,,5,44,0,0,,,20.2,,66.4,7.6,38.3,52.9,,17,,1793275268124
+openai/gpt-4.1-nano,default,GPT-4.1 nano,,,3.8,20.3,0,0,,,11.1,,51.2,3.8,32,17.3,,7,,1793275268124
+meta-llama/llama-4-maverick,default,Llama 4 Maverick,,31.7,4.9,50,0,0,,,16.3,0.6,67.1,6.8,43,17.8,,14,2,1793275268124
+meta-llama/llama-4-scout,default,Llama 4 Scout,,21.3,3.8,27.7,0,0,,,8.2,0.5,58.7,1.5,39.5,15.5,,4,1,1793275268124
+deepseek/deepseek-chat-v3-0324,default,DeepSeek V3 0324,,39,4.7,40.7,0,0,,,21.2,0.8,65.5,15.2,41,47.1,,19,3,1793275268124
+google/gemma-3-4b-it,default,Gemma 3 4B Instruct,,,5.3,6.7,,0,,,2.7,,29.1,0.8,28.3,5,,0,,1793275268124
+google/gemma-3-12b-it,default,Gemma 3 12B Instruct,,16.4,4.2,8.3,0,0,,,5.8,0.1,34.9,0.8,36.7,10.8,,2,0,1793275268124
+cohere/command-a,default,Command A,,,4,21.3,,0,,,,,52.7,0.8,36.5,15.2,,,,1793275268124
+rekaai/reka-flash-3,default,Reka Flash 3,,,4.4,0,,0,,,,,52.9,0,30.4,0,,,,1793275268124
+google/gemma-3-27b-it,default,Gemma 3 27B Instruct,,23.3,4.4,7.3,0,0,,,10.1,0.1,42.8,3.8,31.8,10.5,,6,0,1793275268124
+perplexity/sonar-pro,default,Sonar Pro,,,6.6,,,,,,,,57.8,,,,,,,1793188864989
+mistralai/mistral-saba,default,Mistral Saba,,,4.3,,,,,,,,42.4,,,,,,,1793188864989
+mistralai/mistral-small-24b-instruct-2501,default,Mistral Small 3,,,3.8,0,,,,,,,46.2,,26.4,19.6,,,,1793275268124
+perplexity/sonar,default,Sonar,,,4.9,,,,,,,,47.1,,,,,,,1793188864989
+microsoft/phi-4,default,Phi-4,,,3.8,0,,0,,,,,57.5,3.8,23.5,0,,,,1793275268124
+meta-llama/llama-3.3-70b-instruct,default,Llama 3.3 Instruct 70B,,,3.6,15.7,0,0,,,11.9,,49.8,3,47.1,26.6,,8,,1793275268124
+amazon/nova-lite-v1,default,Nova Lite,,,4.3,19,,0,,,,,43.3,0.8,34.1,17.5,,,,1793275268124
+amazon/nova-micro-v1,default,Nova Micro,,,4.6,13,,0,,,,,35.8,1.5,29.4,14,,,,1793275268124
+amazon/nova-pro-v1,default,Nova Pro,,,3.2,21,,0,,,,,49.9,6.1,38.1,14,,,,1793275268124
+openai/gpt-4o-2024-11-20,nov '24,GPT-4o (Nov '24),,,2.4,49.3,0,0,,,,,54.3,8.3,34.3,25.1,,,,1793275268124
+mistralai/mistral-large-2407,jul '24,Mistral Large 2 (Jul '24),,,2.9,2,,,,,,,47.2,,31.6,33,,,,1793275268124
+mistralai/mistral-large-2407,nov '24,Mistral Large 2 (Nov '24),,,3.3,,,0,,,,,48.6,6.1,31.2,30.7,,,,1793275268124
+qwen/qwen-2.5-coder-32b-instruct,default,Qwen2.5 Coder Instruct 32B,,,3.5,,,,,,,,41.7,,,,,,,1793188864989
+meta-llama/llama-3.2-1b-instruct,default,Llama 3.2 Instruct 1B,,,5.5,6.7,,0,,,,,19.6,0,22.8,0,,,,1793275268124
+meta-llama/llama-3.2-3b-instruct,default,Llama 3.2 Instruct 3B,,,5.3,4.3,,,,,,,25.5,,26.2,21.1,,,,1793275268124
+qwen/qwen-2.5-72b-instruct,default,Qwen2.5 Instruct 72B,,,3.6,,,0,,,,,49.1,4.5,36.9,34.5,,,,1793275268124
+openai/gpt-4o-2024-08-06,aug '24,GPT-4o (Aug '24),,,2.3,41,,0,,,,,52.1,8.3,36,28.9,,,,1793188864989
+meta-llama/llama-3.1-70b-instruct,default,Llama 3.1 Instruct 70B,,,4.5,,,0,,,,,40.9,3,34.4,15.2,,,,1793275268124
+meta-llama/llama-3.1-8b-instruct,default,Llama 3.1 Instruct 8B,,,5.3,18,0,0,,,5.4,,25.9,0.8,28.6,16.4,,2,,1793275268124
+openai/gpt-4o-mini,default,GPT-4o mini,,,4.2,,0,,,,11.4,,42.6,,31,,,7,,1793275268124
+openai/gpt-4o-2024-05-13,may '24,GPT-4o (May '24),,,1.8,,,,,,24.2,,52.6,,,,,23,,1793188864989
+mistralai/mixtral-8x22b-instruct,default,Mixtral 8x22B Instruct,,,4,,,,,,,,33.2,,,,,,,1793188864989
+mistralai/mistral-large,feb '24,Mistral Large (Feb '24),,,3.5,,,,,,,,35.1,,,,,,,1793188864989
+openai/gpt-4,default,GPT-4,,,,,0,,,,13.1,,34.9,,33.2,,,10,,1793188864989
