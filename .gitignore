@@ -6,3 +6,6 @@
 *_cache/
 *_files/
 .quarto/
+
+/.quarto/
+**/*.quarto_ipynb

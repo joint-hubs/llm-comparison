@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+  resources:
+    - plots/v2/*.png
+
+website:
+  title: "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)"
+  navbar:
+    background: "#fcfcfb"
+    foreground: "#0b0b0b"
+    left:
+      - text: "Raport główny"
+        href: index.qmd
+    right:
+      - icon: github
+        href: https://github.com/joint-hubs/llm-comparison
+
+format:
+  html:
+    lang: pl
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-title: "Spis treści"
+    number-sections: true
+    code-fold: true
+    code-summary: "Pokaż kod R"
+    fig-cap-location: bottom
+    df-print: paged

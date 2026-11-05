@@ -63,14 +63,22 @@ widget_pareto_plotly <- function(out) {
   pv <- out$pareto_verified %>% filter(blend_cost > 0) %>% arrange(blend_cost)
   mine <- q %>% filter(mine | core) %>% arrange(blend_cost)
 
+  make_hover <- function(model_id, blend_cost, quality, qual_low, qual_high, resid, med_spe) {
+    sprintf(
+      "%s<br>Cena: $%.3f /1M<br>Jakość: %.1f [%.1f – %.1f]<br>Rezerwa: %+.1f p.p.<br>Mediana SPE: %s<br>Zasięg: %s",
+      model_id, blend_cost, quality, qual_low, qual_high, resid,
+      ifelse(is.finite(med_spe), sprintf("%+.1f p.p.", med_spe), "b/d"),
+      out$completed_wide$cov_badge_7[match(model_id, out$completed_wide$model_id)]
+    )
+  }
   base <- q %>%
-    transmute(x = blend_cost, y = quality, model_id,
-              hover = sprintf(
-                "%s<br>Cena: $%.3f /1M<br>Jakość: %.1f [%.1f – %.1f]<br>Rezerwa: %+.1f p.p.<br>Mediana SPE: %s<br>Zasięg: %s",
-                model_id, blend_cost, quality, qual_low, qual_high, resid,
-                ifelse(is.finite(med_spe), sprintf("%+.1f p.p.", med_spe), "b/d"),
-                out$completed_wide$cov_badge_7[match(model_id, out$completed_wide$model_id)]
-              ))
+    transmute(x = blend_cost, y = quality,
+              hover = make_hover(model_id, blend_cost, quality, qual_low, qual_high,
+                                 resid, med_spe))
+  mine <- mine %>%
+    transmute(x = blend_cost, y = quality,
+              hover = make_hover(model_id, blend_cost, quality, qual_low, qual_high,
+                                 resid, med_spe))
 
   p <- plot_ly() %>%
     add_markers(data = base, x = ~x, y = ~y, type = "scatter", mode = "markers",
@@ -88,7 +96,7 @@ widget_pareto_plotly <- function(out) {
               line = list(color = W_CAT1, width = 2.5),
               marker = list(size = 7, color = W_CAT1),
               hovertemplate = "%{x:.2f} → %{y:.1f}<extra>Frontiera (zweryfikowane)</extra>") %>%
-    add_markers(data = mine, x = ~blend_cost, y = ~quality, type = "scatter",
+    add_markers(data = mine, x = ~x, y = ~y, type = "scatter",
                 mode = "markers", name = "Twoje modele (Fenix)",
                 marker = list(size = 11, color = W_CAT3, symbol = "star"),
                 text = ~hover, hovertemplate = "%{text}<extra></extra>") %>%
@@ -234,7 +242,7 @@ widget_models_explorer_table <- function(out) {
 
   d <- out$completed_wide %>%
     select(model_id, model_provider, all_of(key_metrics), cov_badge_7, cov_badge_14) %>%
-    left_join(out$models_flagship %>% select(model_id, flagship_variant), by = "model_id") %>%
+    left_join(out$models_flagship %>% select(model_id, flagship_variant, blend_cost), by = "model_id") %>%
     left_join(out$quality_df %>% select(model_id, quality, resid, med_spe), by = "model_id") %>%
     left_join(out$fenix_roles_df %>%
                 select(model_id, role, score) %>%
@@ -253,6 +261,7 @@ widget_models_explorer_table <- function(out) {
       model_id         = reactable::colDef(name = "Model", minWidth = 210, sticky = "left"),
       model_provider   = reactable::colDef(name = "Dostawca", minWidth = 100),
       flagship_variant = reactable::colDef(name = "Wariant flagowy", minWidth = 110),
+      blend_cost       = reactable::colDef(name = "Cena ($/1M)", format = colFormat(prefix = "$", digits = 3), minWidth = 90),
       quality          = reactable::colDef(name = "Jakość", format = colFormat(digits = 1), minWidth = 70),
       resid            = reactable::colDef(name = "Rezerwa", format = colFormat(digits = 1), minWidth = 70),
       med_spe          = reactable::colDef(name = "Med. SPE", format = colFormat(digits = 1), minWidth = 70),
