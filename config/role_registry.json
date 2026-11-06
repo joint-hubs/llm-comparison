@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "title": "Fenix model-routed role registry (FOC-1266)",
+  "metrics": ["intel", "py", "hle", "lctx", "econ", "phys", "know", "hon", "code", "agent", "gpqa", "term", "ifb", "tau2"],
+  "disclaimer": "Metric weights and token-share defaults are expert heuristics for model selection. They are not measurements of role performance and do not imply that a higher-weighted benchmark causes better outcomes in that role. The v2 DEV/REVIEW/TEST metric triples are starting points, not empirical truth.",
+  "re_derivation": "Authority order (spec 2.1): agents/<squad>/CLAUDE.md lifecycle declarations > agents/<squad>/agents/*.md named-role responsibilities (file existence never implies active) > config/models.json routing + scripts/gen-model-map.mjs ROLE_MAP > config/graph.json. Re-derive this union whenever a squad CLAUDE.md lifecycle changes.",
+  "routing_keys_note": "routing_keys are provenance of the role definition ONLY. They must never be resolved to a today-model anywhere in the dashboard (spec 1/7).",
+  "roles": [
+    {
+      "id": "plan.lead",
+      "squad": "plan",
+      "routing_keys": ["lead"],
+      "routing_note": "overlay routing.plan.lead overrides the plain key",
+      "responsibility": "Planning lead: inbox item -> epic + verifiable subtasks, contract spec + ADR, HITL gates; delegates research, never codes",
+      "weight_rationale": "reasoning, long-context, instruction-following, honesty; code minor (implementation delegated)",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 20, "econ": 5, "phys": 0, "know": 10, "hon": 15, "code": 5, "agent": 0, "gpqa": 0, "term": 0, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.60, "input": 0.30, "output": 0.10},
+      "share_rationale": "re-reads long briefs/specs; short gate text"
+    },
+    {
+      "id": "plan.discovery",
+      "squad": "plan",
+      "routing_keys": ["discovery"],
+      "responsibility": "Inbox echo-back + <=1-page brief (problem, outcome, questions)",
+      "weight_rationale": "long-context reading + honesty (no fabricated facts) + instruction-following",
+      "weights": {"intel": 20, "py": 0, "hle": 0, "lctx": 25, "econ": 0, "phys": 0, "know": 10, "hon": 20, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 25, "tau2": 0},
+      "default_shares": {"cache_read": 0.65, "input": 0.25, "output": 0.10},
+      "share_rationale": "long inbox material re-reads; short brief"
+    },
+    {
+      "id": "plan.flash",
+      "squad": "plan",
+      "routing_keys": ["dor_gate", "flash"],
+      "routing_note": "merged row: the plan squad table lists one role carrying both keys",
+      "responsibility": "DoR checklist / AC extraction; mechanical extraction and formatting",
+      "weight_rationale": "instruction-following + cheapness for mechanical checklist work",
+      "weights": {"intel": 15, "py": 0, "hle": 0, "lctx": 10, "econ": 15, "phys": 0, "know": 5, "hon": 20, "code": 5, "agent": 0, "gpqa": 0, "term": 0, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.35, "output": 0.10},
+      "share_rationale": "checklist re-reads; short outputs"
+    },
+    {
+      "id": "plan.spec",
+      "squad": "plan",
+      "routing_keys": ["spec"],
+      "responsibility": "Spec + ADR draft (contract craft)",
+      "weight_rationale": "reasoning + long-context + instruction + honesty; some code",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 20, "econ": 0, "phys": 0, "know": 10, "hon": 15, "code": 10, "agent": 0, "gpqa": 0, "term": 0, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "context re-reads; moderate spec output"
+    },
+    {
+      "id": "plan.spec-review",
+      "squad": "plan",
+      "routing_keys": ["spec_review"],
+      "routing_note": "CLI name spec-review maps to routing key spec_review",
+      "responsibility": "Adversarial spec check (skeptic pass)",
+      "weight_rationale": "reasoning + honesty (catching holes) + code reading",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 15, "econ": 0, "phys": 0, "know": 0, "hon": 25, "code": 20, "agent": 0, "gpqa": 0, "term": 0, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "re-reads spec/context; findings output"
+    },
+    {
+      "id": "plan.decomposer",
+      "squad": "plan",
+      "routing_keys": ["decompose", "enrich"],
+      "routing_note": "merged row: enrich is decomposer's existing-issue mode (spec 2.3)",
+      "responsibility": "Re-planning an existing issue or justified multi-slice decomposition",
+      "weight_rationale": "reasoning + instruction + domain knowledge; code minor",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 15, "econ": 0, "phys": 0, "know": 15, "hon": 15, "code": 10, "agent": 0, "gpqa": 0, "term": 0, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "re-reads issue/context; scope output"
+    },
+    {
+      "id": "plan.push",
+      "squad": "plan",
+      "routing_keys": ["push"],
+      "responsibility": "Publication draft; idempotent approved publication",
+      "weight_rationale": "instruction-following + honesty + tool-use (tau2) for idempotent writes",
+      "weights": {"intel": 15, "py": 0, "hle": 0, "lctx": 0, "econ": 15, "phys": 0, "know": 0, "hon": 25, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 30, "tau2": 15},
+      "default_shares": {"cache_read": 0.45, "input": 0.35, "output": 0.20},
+      "share_rationale": "mixed reads; publication drafts"
+    },
+    {
+      "id": "plan.worker",
+      "squad": "plan",
+      "routing_keys": ["worker"],
+      "responsibility": "Bounded research summary",
+      "weight_rationale": "long-context + honesty + knowledge",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 30, "econ": 10, "phys": 0, "know": 20, "hon": 25, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.60, "input": 0.30, "output": 0.10},
+      "share_rationale": "heavy reading; short summaries"
+    },
+    {
+      "id": "dev.lead",
+      "squad": "dev",
+      "routing_keys": ["lead"],
+      "routing_note": "overlay routing.dev.lead; fallback lead ?? default ?? worker (FOC-607)",
+      "responsibility": "Dev lead: one ready issue -> red-first tests + committed change + journal; writes the code itself (FOC-1179)",
+      "weight_rationale": "coding/Python/agentic front and centre (v2 DEV triple) + terminal + honesty",
+      "weights": {"intel": 10, "py": 20, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 5, "code": 30, "agent": 15, "gpqa": 0, "term": 10, "ifb": 10, "tau2": 0},
+      "default_shares": {"cache_read": 0.50, "input": 0.30, "output": 0.20},
+      "share_rationale": "code context + substantial code output"
+    },
+    {
+      "id": "dev.recon",
+      "squad": "dev",
+      "routing_keys": ["recon"],
+      "responsibility": "Context packet — files, patterns, risks (read-only)",
+      "weight_rationale": "code reading + long-context + terminal",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 25, "econ": 0, "phys": 0, "know": 0, "hon": 15, "code": 30, "agent": 0, "gpqa": 0, "term": 15, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "large-file reads; compact packet"
+    },
+    {
+      "id": "dev.worker",
+      "squad": "dev",
+      "routing_keys": ["worker"],
+      "responsibility": "Bounded read-only lookups; verbose command runs",
+      "weight_rationale": "terminal + instruction + honesty; cheap tier",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 20, "phys": 0, "know": 0, "hon": 20, "code": 15, "agent": 0, "gpqa": 0, "term": 25, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.35, "output": 0.20},
+      "share_rationale": "command/log driven; fresh input"
+    },
+    {
+      "id": "dev.flash",
+      "squad": "dev",
+      "routing_keys": ["flash"],
+      "responsibility": "Mechanical extraction, formatting, checklists (read-only)",
+      "weight_rationale": "instruction-following + cheapness",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 25, "phys": 0, "know": 0, "hon": 20, "code": 15, "agent": 0, "gpqa": 0, "term": 10, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.40, "output": 0.15},
+      "share_rationale": "mechanical passes over fresh extracts"
+    },
+    {
+      "id": "review.lead",
+      "squad": "review",
+      "routing_keys": ["lead"],
+      "routing_note": "overlay routing.review.lead (FOC-1171); review squad table row 'lead (you)'",
+      "responsibility": "ONE strong pass over diff + journal; deterministic security step; verdict",
+      "weight_rationale": "code reading + honesty + instruction (v2 REVIEW triple)",
+      "weights": {"intel": 15, "py": 0, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 20, "code": 25, "agent": 10, "gpqa": 0, "term": 10, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "re-reads diff + code; findings"
+    },
+    {
+      "id": "review.worker",
+      "squad": "review",
+      "routing_keys": ["worker"],
+      "responsibility": "Bounded read-only context extraction",
+      "weight_rationale": "code + long-context + honesty",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 25, "econ": 10, "phys": 0, "know": 0, "hon": 20, "code": 25, "agent": 0, "gpqa": 0, "term": 0, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "repeated context reads; short extracts"
+    },
+    {
+      "id": "review.flash",
+      "squad": "review",
+      "routing_keys": ["flash"],
+      "responsibility": "Finding formatting / dedup",
+      "weight_rationale": "instruction-following + honesty; cheap tier",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 25, "phys": 0, "know": 0, "hon": 25, "code": 20, "agent": 0, "gpqa": 0, "term": 0, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.35, "output": 0.20},
+      "share_rationale": "formats findings; moderate output"
+    },
+    {
+      "id": "test.lead",
+      "squad": "test",
+      "routing_keys": ["lead"],
+      "routing_note": "overlay routing.test.lead; fallback lead ?? default ?? worker",
+      "responsibility": "Test lead: deploy change, run lint + suites, synthetic/health checks, root-cause",
+      "weight_rationale": "terminal/agentic + instruction (v2 TEST triple) + code",
+      "weights": {"intel": 10, "py": 5, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 10, "code": 15, "agent": 20, "gpqa": 0, "term": 25, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.40, "input": 0.35, "output": 0.25},
+      "share_rationale": "command/log driven; more fresh IO"
+    },
+    {
+      "id": "test.deployer",
+      "squad": "test",
+      "routing_keys": ["deploy"],
+      "routing_note": "CLI name deployer maps to routing key deploy",
+      "responsibility": "Prepare actual runtime; deployment when applicable",
+      "weight_rationale": "terminal + agentic + instruction",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 15, "code": 10, "agent": 25, "gpqa": 0, "term": 35, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.35, "input": 0.40, "output": 0.25},
+      "share_rationale": "terminal-heavy; fresh logs"
+    },
+    {
+      "id": "test.scenario-gen",
+      "squad": "test",
+      "routing_keys": ["scenarios"],
+      "routing_note": "CLI name scenario-gen maps to routing key scenarios",
+      "responsibility": "Observable AC and negative scenarios",
+      "weight_rationale": "reasoning + instruction + code + honesty",
+      "weights": {"intel": 20, "py": 0, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 10, "hon": 15, "code": 15, "agent": 15, "gpqa": 0, "term": 0, "ifb": 25, "tau2": 0},
+      "default_shares": {"cache_read": 0.50, "input": 0.35, "output": 0.15},
+      "share_rationale": "spec re-reads; scenario lists"
+    },
+    {
+      "id": "test.runner",
+      "squad": "test",
+      "routing_keys": ["run"],
+      "routing_note": "CLI name runner maps to routing key run",
+      "responsibility": "Execute checks and collect evidence",
+      "weight_rationale": "terminal + agentic + instruction",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 20, "code": 0, "agent": 25, "gpqa": 0, "term": 35, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.35, "input": 0.40, "output": 0.25},
+      "share_rationale": "run output dominates"
+    },
+    {
+      "id": "test.root-cause",
+      "squad": "test",
+      "routing_keys": ["root_cause"],
+      "routing_note": "CLI name root-cause maps to routing key root_cause",
+      "responsibility": "Diagnose failures without hiding them",
+      "weight_rationale": "reasoning + code + terminal + honesty + Python",
+      "weights": {"intel": 25, "py": 10, "hle": 0, "lctx": 0, "econ": 0, "phys": 0, "know": 0, "hon": 15, "code": 25, "agent": 0, "gpqa": 0, "term": 15, "ifb": 10, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.35, "output": 0.20},
+      "share_rationale": "log/code re-reads; analysis output"
+    },
+    {
+      "id": "test.worker",
+      "squad": "test",
+      "routing_keys": ["worker"],
+      "responsibility": "Bounded log analysis / report draft",
+      "weight_rationale": "long-context + terminal + honesty",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 25, "econ": 0, "phys": 0, "know": 0, "hon": 20, "code": 15, "agent": 0, "gpqa": 0, "term": 20, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.40, "input": 0.40, "output": 0.20},
+      "share_rationale": "log-heavy; report drafts"
+    },
+    {
+      "id": "test.flash",
+      "squad": "test",
+      "routing_keys": ["flash"],
+      "responsibility": "Result parsing / pass-fail tables",
+      "weight_rationale": "instruction-following + terminal; cheap tier",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 25, "phys": 0, "know": 0, "hon": 20, "code": 0, "agent": 0, "gpqa": 0, "term": 25, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.35, "input": 0.45, "output": 0.20},
+      "share_rationale": "parses fresh results; tables"
+    },
+    {
+      "id": "cadence.lead",
+      "squad": "cadence",
+      "routing_keys": ["default"],
+      "routing_note": "shared fallback key (child-model: lead ?? default ?? worker) + overlay routing.cadence.lead",
+      "responsibility": "Weekly digest lead: time-triggered, reads workspace state, posts ISO-week digest; read-mostly",
+      "weight_rationale": "long-context + knowledge + honesty for faithful summarisation",
+      "weights": {"intel": 15, "py": 0, "hle": 0, "lctx": 20, "econ": 10, "phys": 0, "know": 15, "hon": 15, "code": 10, "agent": 0, "gpqa": 0, "term": 0, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.35, "output": 0.10},
+      "share_rationale": "workspace state re-reads; digest"
+    },
+    {
+      "id": "cadence.collector",
+      "squad": "cadence",
+      "routing_keys": ["default"],
+      "routing_note": "CLI name collector maps to the shared default key (gen-model-map ROLE_MAP)",
+      "responsibility": "linear-query JSON + flow-db pattern collection",
+      "weight_rationale": "terminal + instruction + honesty + tool-use",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 0, "econ": 20, "phys": 0, "know": 0, "hon": 20, "code": 0, "agent": 15, "gpqa": 0, "term": 25, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.35, "input": 0.45, "output": 0.20},
+      "share_rationale": "query results are fresh input"
+    },
+    {
+      "id": "cadence.retro",
+      "squad": "cadence",
+      "routing_keys": ["retro"],
+      "responsibility": "Drift + blameless retro",
+      "weight_rationale": "reasoning + honesty + long-context + code",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 20, "econ": 0, "phys": 0, "know": 15, "hon": 25, "code": 15, "agent": 0, "gpqa": 0, "term": 0, "ifb": 0, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "state/diff re-reads; retro text"
+    },
+    {
+      "id": "cadence.digest",
+      "squad": "cadence",
+      "routing_keys": ["pl"],
+      "routing_note": "CLI name digest maps to cadence key pl ('PL' = Polish digest composition); pl is dormant in plan/dev/review",
+      "responsibility": "Polish weekly digest composition",
+      "weight_rationale": "long-context + knowledge + honesty + reasoning",
+      "weights": {"intel": 15, "py": 0, "hle": 0, "lctx": 25, "econ": 0, "phys": 0, "know": 20, "hon": 25, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.55, "input": 0.30, "output": 0.15},
+      "share_rationale": "collected material re-reads; PL digest"
+    },
+    {
+      "id": "cadence.worker",
+      "squad": "cadence",
+      "routing_keys": ["worker"],
+      "responsibility": "Summaries",
+      "weight_rationale": "long-context + honesty + knowledge",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 30, "econ": 10, "phys": 0, "know": 20, "hon": 25, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 15, "tau2": 0},
+      "default_shares": {"cache_read": 0.60, "input": 0.30, "output": 0.10},
+      "share_rationale": "heavy reading; short summaries"
+    },
+    {
+      "id": "cadence.flash",
+      "squad": "cadence",
+      "routing_keys": ["flash"],
+      "responsibility": "Metrics / tables",
+      "weight_rationale": "instruction-following + cheapness",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 15, "econ": 25, "phys": 0, "know": 10, "hon": 20, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.50, "input": 0.35, "output": 0.15},
+      "share_rationale": "table extraction; small outputs"
+    },
+    {
+      "id": "supervisor.lead",
+      "squad": "supervisor",
+      "routing_keys": [],
+      "routing_note": "overlay routing.supervisor.lead (frontman; never routing.supervisor.default, which is only a generic-child fallback)",
+      "responsibility": "Frontman: spawns squad children into worktrees, budgets, gate relays, triage; only channel to Mateusz",
+      "weight_rationale": "judgment/instruction + honesty for gate/budget truth; agentic (tau2) for orchestration",
+      "weights": {"intel": 25, "py": 0, "hle": 0, "lctx": 10, "econ": 0, "phys": 0, "know": 5, "hon": 15, "code": 0, "agent": 15, "gpqa": 0, "term": 0, "ifb": 20, "tau2": 10},
+      "default_shares": {"cache_read": 0.50, "input": 0.35, "output": 0.15},
+      "share_rationale": "reused orchestration context + gate text"
+    },
+    {
+      "id": "supervisor.worker",
+      "squad": "supervisor",
+      "routing_keys": ["worker"],
+      "routing_note": "routing-only role declared in models.json routing.supervisor",
+      "responsibility": "Bounded lookups / command runs for the frontman",
+      "weight_rationale": "long-context + terminal + honesty + instruction",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 20, "econ": 20, "phys": 0, "know": 0, "hon": 20, "code": 0, "agent": 0, "gpqa": 0, "term": 20, "ifb": 20, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.40, "output": 0.15},
+      "share_rationale": "mixed lookups and command runs"
+    },
+    {
+      "id": "supervisor.flash",
+      "squad": "supervisor",
+      "routing_keys": ["flash"],
+      "routing_note": "routing-only role declared in models.json routing.supervisor",
+      "responsibility": "Mechanical extraction for the frontman",
+      "weight_rationale": "instruction-following + honesty; cheap tier",
+      "weights": {"intel": 0, "py": 0, "hle": 0, "lctx": 20, "econ": 25, "phys": 0, "know": 0, "hon": 25, "code": 0, "agent": 0, "gpqa": 0, "term": 0, "ifb": 30, "tau2": 0},
+      "default_shares": {"cache_read": 0.45, "input": 0.40, "output": 0.15},
+      "share_rationale": "mechanical extraction"
+    },
+    {
+      "id": "orchestrator.lead",
+      "squad": "orchestrator",
+      "routing_keys": [],
+      "routing_note": "no models.json key (session model); the Flash->Pro->Sonnet->Opus tier ladder and the dev/refine skills are NOT registry rows",
+      "responsibility": "Interactive top-level assistant: plans and delegates across projects via agent bridge, memory/knowledge, answers Mateusz",
+      "weight_rationale": "broad: reasoning + long-context + agentic, knowledge + honesty, some code",
+      "weights": {"intel": 20, "py": 0, "hle": 0, "lctx": 15, "econ": 0, "phys": 0, "know": 10, "hon": 10, "code": 10, "agent": 15, "gpqa": 0, "term": 0, "ifb": 10, "tau2": 10},
+      "default_shares": {"cache_read": 0.45, "input": 0.35, "output": 0.20},
+      "share_rationale": "broad interactive turns, mixed context"
+    }
+  ],
+  "excluded_ledger": [
+    {"id": "dev.implementer", "key": "implement", "lifecycle": "retired", "reason": "folded into dev.lead (FOC-1179); the role file exists but says it is not part of the flow — file existence is NOT evidence of active"},
+    {"id": "dev.refactorer", "key": "multifile", "lifecycle": "retired", "reason": "folded into dev.lead (FOC-1179)"},
+    {"id": "dev.debugger", "key": "hard", "lifecycle": "retired", "reason": "folded into dev.lead (FOC-1179); explicit correction of the earlier misinference"},
+    {"id": "review.first-pass", "key": "first_pass", "lifecycle": "retired", "reason": "folded into review.lead (FOC-1179)"},
+    {"id": "review.security", "key": "security", "lifecycle": "retired", "reason": "the security pass is a DETERMINISTIC step (scanner + tests + egress screen), not an LLM role"},
+    {"id": "review.deep", "key": "deep", "lifecycle": "retired", "reason": "folded into review.lead (FOC-1179)"},
+    {"id": "plan.pl", "key": "pl", "lifecycle": "dormant", "reason": "no consumer; only cadence.pl has one (gen-model-map ROLE_MAP)"},
+    {"id": "dev.pl", "key": "pl", "lifecycle": "dormant", "reason": "no consumer; only cadence.pl has one (gen-model-map ROLE_MAP)"},
+    {"id": "review.pl", "key": "pl", "lifecycle": "dormant", "reason": "no consumer; only cadence.pl has one (gen-model-map ROLE_MAP)"},
+    {"id": "test.terminal", "key": "terminal", "lifecycle": "dormant", "reason": "no role file, not in ROLE_MAP, no squad-table row; terminal-heavy TEST work routes through runner/lead"},
+    {"id": "human", "key": "", "lifecycle": "human", "reason": "config/graph.json wait state, not a model-routing role"},
+    {"id": "supervisor-triage", "key": "", "lifecycle": "deterministic", "reason": "verdict proposal is a script (supervisor-triage.mjs), not an LLM role"},
+    {"id": "generic-spawns", "key": "", "lifecycle": "generic", "reason": "general-purpose / Explore: no role definition; tier-inherited helpers, not product roles"}
+  ]
+}

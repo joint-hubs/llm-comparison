@@ -1,0 +1,142 @@
+﻿model_id,name,author,input_usd_per_mtok,output_usd_per_mtok,cache_read_usd_per_mtok,context_tokens,release_date
+openrouter/auto,Auto Router,OpenRouter,-1000000,-1000000,,2000000,2026-11-05
+openrouter/auto-code,Auto Code,OpenRouter,-1000000,-1000000,,2000000,2026-11-05
+ricursiveai/ripple-65b-preview,ricursiveAI/Ripple-65B-Preview,ricursiveAI,0.2,0.6,0.05,1048576,2026-11-04
+stealth/crouton-alpha,Crouton Alpha,Stealth,0,0,,1048576,2026-11-03
+z-ai/glm-5.3-flashx-legal,GLM 5.3 FlashX Legal,Z.ai,0.37,1.25,0.075,1048576,2026-11-02
+particle-ai/particle-1,Particle-1,Particle AI,0.05,0.5,0.003,1048576,2026-10-28
+openai/gpt-6.1-terra-pro,GPT-6.1 Terra Pro,OpenAI,1,5,0.05,1050000,2026-10-26
+recursive/flint-v1.0:free,Flint (free),Recursive,0,0,,262144,2026-10-22
+elorian/glimpse,Glimpse,Elorian,0.6,3,0.06,262144,2026-10-17
+xingchen-agi/xing4.0-29b-a4b:free,Xing4.0 29B A4B (free),XingChen,0,0,,262144,2026-10-16
+inception/mercury-3,Mercury 3,inception,0.1,0.35,0.01,1000000,2026-10-16
+prism-ml/ternary-bonsai-2-9b,Ternary Bonsai 2 9B,PrismML,0.08,0.13,0.04,262144,2026-10-16
+moondream/moondream3-preview,Moondream 3 Preview,Moondream,0.3,2.5,,32000,2026-10-16
+moondream/moondream3.1-9b-a2b,Moondream 3.1,Moondream,0.3,2.5,,32000,2026-10-16
+unbiased/pareto-26.10,Pareto 26.10,Unbiased,0.8,3.2,0.03,1048576,2026-10-15
+unbiased/pareto-26.9,Pareto 26.9,Unbiased,2.5,7.5,0.25,262144,2026-10-14
+liquid/lfm-2.5-24b-a2b,LFM2.5-24B-A2B,Liquid,0.05,0.7,0.025,128000,2026-10-13
+scaledown/summarize,Summarize,Scaledown,0.04,0,,1000000,2026-10-13
+scaledown/extract,Extract,Scaledown,0.04,0,,1000000,2026-10-13
+google/gemini-nano-banana-2.1,Nano Banana 2.1,Google,1.5,7.5,,65536,2026-10-06
+openai/gpt-6.1-sol-pro,GPT-6.1 Sol Pro,OpenAI,2,10,0.1,1050000,2026-09-29
+perceptron/perceptron-mk1.5,Perceptron Mk1.5,perceptron,0.15,1.5,,36864,2026-09-25
+typesafe/jev-router,Jev Router,TypeSafe,-1000000,-1000000,,1000000,2026-09-25
+fireworks/ember-1,Ember-1,Fireworks AI,3,15,0.3,1048576,2026-09-24
+z-ai/glm-5.3-prime,GLM 5.3 Prime,Z.ai,2.8,8.8,0.56,1000000,2026-09-23
+qwen/qwen3.8-max-prime,Qwen3.8 Max Prime,Qwen,4,12,0.5,1000000,2026-09-23
+aion-labs/aion-3.5-mini,Aion 3.5 Mini,Aion Labs,0.7,1.4,0.18,262144,2026-09-23
+aion-labs/aion-3.5,Aion 3.5,Aion Labs,3,6,0.75,262144,2026-09-23
+openai/gpt-6-luna-pro,GPT-6 Luna Pro,OpenAI,0.1,0.5,0.01,1050000,2026-09-22
+openai/gpt-6-sol-pro,GPT-6 Sol Pro,OpenAI,2,10,0.2,1050000,2026-09-22
+xiaomi/mimo-v2.6-pro-ultraspeed,MiMo-V2.6-Pro-UltraSpeed,Xiaomi,4.35,8.7,0.036,1048576,2026-09-21
+qwen/qwen3.8-omni-flash,Qwen3.8 Omni Flash,Qwen,0.15,0.47,0.016,1000000,2026-09-21
+nvidia/switchyard,Switchyard,Nvidia,-1000000,-1000000,,1000000,2026-09-21
+prism-ml/ternary-bonsai-2-27b,Ternary Bonsai 2 27B,PrismML,0.075,0.5,0.0375,262144,2026-09-18
+z-ai/glm-5.3-flashx,GLM 5.3 FlashX,Z.ai,0.37,1.25,0.075,1048576,2026-09-18
+inference-net/schematron-v2-turbo,Schematron V2 Turbo,Inference Net,0.03,0.15,0.03,128000,2026-09-12
+inference-net/schematron-v2-small,Schematron V2 Small,Inference Net,0.05,0.23,0.05,128000,2026-09-12
+sakana/fugu-ultra-v2,Fugu Ultra v2,sakana,5,30,0.5,1000000,2026-09-11
+sakana/fugu-max,Fugu Max,sakana,2,6,0.25,1000000,2026-09-11
+nex-agi/nex-n2.5-mini,Nex-N2.5-Mini,nex-agi,0.025,0.1,0.0025,262144,2026-09-08
+nex-agi/nex-n2.5-pro,Nex-N2.5-Pro,nex-agi,0.075,0.25,0.015,262144,2026-09-08
+openai/gpt-6-astra-pro,GPT-6 Astra Pro,OpenAI,10,50,1,1050000,2026-09-04
+meta/muse-spark-1.3-contributor,Muse Spark 1.3 Contributor,Meta,0.1,0.2,0.002,1048576,2026-09-02
+tencent/hy4-preview,Hy4 preview,tencent,0.834,2.501,0.042,1048576,2026-08-28
+qwen/qwen3.8-flash,Qwen3.8 Flash,Qwen,0.15,0.47,0.016,1000000,2026-08-26
+meta/muse-spark-1.2-contributor,Muse Spark 1.2 Contributor,Meta,0.1,0.2,0.002,1048576,2026-08-21
+tencent/hy-mt2-1.8b,Hy-MT2-1.8B,tencent,0.044,0.177,,8192,2026-08-20
+tencent/hy-mt2-30b-a3b,Hy-MT2-30B-A3B,tencent,0.074,0.295,,8192,2026-08-20
+tencent/hy-mt2-7b,Hy-MT2-7B,tencent,0.074,0.295,,8192,2026-08-19
+dots-studio/dots-3-note-preview:free,Dots3-Note Preview (free),Dots Studio,0,0,,512000,2026-08-14
+bytedance-seed/seed-2-1-turbo,Seed 2.1 Turbo,bytedance-seed,0.5,2.5,,262144,2026-08-12
+bytedance-seed/seed-2.0-code,Seed-2.0-Code,bytedance-seed,0.5,3,,262144,2026-08-12
+sakana/sakana-namazu,Sakana Namazu,sakana,0.95,4,0.15,262144,2026-08-11
+qwen/qwen3.7-flash,Qwen3.7 Flash,Qwen,0.03,0.13,0.006,1000000,2026-07-28
+openrouter/auto-beta,Auto Router (Beta),OpenRouter,-1000000,-1000000,,2000000,2026-07-17
+openai/gpt-5.6-luna-pro,GPT-5.6 Luna Pro,OpenAI,0.2,1.2,0.02,1050000,2026-07-09
+openai/gpt-5.6-terra-pro,GPT-5.6 Terra Pro,OpenAI,2,12,0.2,1050000,2026-07-09
+openai/gpt-5.6-sol-pro,GPT-5.6 Sol Pro,OpenAI,4,20,0.4,1050000,2026-07-09
+aion-labs/aion-3.0-mini,Aion-3.0-Mini,Aion Labs,0.7,1.4,0.18,131072,2026-07-07
+aion-labs/aion-3.0,Aion-3.0,Aion Labs,3,6,0.75,131072,2026-07-07
+tencent/hy3,Hy3,tencent,0.132,0.528,0.033,262144,2026-07-06
+google/gemini-3.1-flash-lite-image,Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image),Google,0.25,1.5,,65536,2026-06-30
+sakana/fugu-ultra,Fugu Ultra,sakana,5,30,0.5,1000000,2026-06-24
+google/gemini-3.1-flash-image,Nano Banana 2 (Gemini 3.1 Flash Image),Google,0.5,3,,131072,2026-06-18
+google/gemini-3-pro-image,Nano Banana Pro (Gemini 3 Pro Image),Google,2,12,0.2,131072,2026-06-18
+openrouter/fusion,Fusion,OpenRouter,-1000000,-1000000,,1000000,2026-06-13
+nvidia/nemotron-3.5-content-safety,Nemotron 3.5 Content Safety,Nvidia,0.2,0.2,,131072,2026-06-04
+perceptron/perceptron-mk1,Perceptron Mk1,perceptron,0.15,1.5,,32768,2026-05-12
+google/gemini-3.1-flash-lite,Gemini 3.1 Flash Lite,Google,0.25,1.5,0.025,1048576,2026-05-07
+openai/gpt-chat-latest,GPT Chat Latest,OpenAI,5,30,0.5,400000,2026-05-05
+qwen/qwen3.5-plus-20260420,Qwen3.5 Plus 2026-04-20,Qwen,0.3,1.8,,1000000,2026-04-27
+qwen/qwen3.6-flash,Qwen3.6 Flash,Qwen,0.1875,1.125,,1000000,2026-04-27
+openai/gpt-5.4-image-2,GPT-5.4 Image 2,OpenAI,8,15,2,272000,2026-04-21
+openrouter/pareto-code,Pareto Code Router,OpenRouter,-1000000,-1000000,,2000000,2026-04-21
+x-ai/grok-4.20-multi-agent,Grok 4.20 Multi-Agent,SpaceXAI,1.25,2.5,0.2,2000000,2026-03-31
+google/lyria-3-pro-preview,Lyria 3 Pro Preview,Google,0,0,,1048576,2026-03-30
+google/lyria-3-clip-preview,Lyria 3 Clip Preview,Google,0,0,,1048576,2026-03-30
+rekaai/reka-edge,Reka Edge,rekaai,0.1,0.1,,16384,2026-03-20
+bytedance-seed/seed-2.0-lite,Seed-2.0-Lite,bytedance-seed,0.25,2,,262144,2026-03-10
+bytedance-seed/seed-2.0-mini,Seed-2.0-Mini,bytedance-seed,0.1,0.4,,262144,2026-02-26
+google/gemini-3.1-flash-image-preview,Nano Banana 2 (Gemini 3.1 Flash Image Preview),Google,0.5,3,,65536,2026-02-26
+qwen/qwen3.5-flash-02-23,Qwen3.5-Flash,Qwen,0.065,0.26,,1000000,2026-02-25
+google/gemini-3.1-pro-preview-customtools,Gemini 3.1 Pro Preview Custom Tools,Google,2,12,0.2,1048576,2026-02-25
+aion-labs/aion-2.0,Aion-2.0,Aion Labs,0.8,1.6,0.2,131072,2026-02-23
+qwen/qwen3.5-plus-02-15,Qwen3.5 Plus 2026-02-15,Qwen,0.26,1.56,,1000000,2026-02-16
+openrouter/free,Free Models Router,OpenRouter,0,0,,200000,2026-02-01
+writer/palmyra-x5,Palmyra X5,Writer,0.6,6,,1040000,2026-01-21
+openai/gpt-audio,GPT Audio,OpenAI,2.5,10,,128000,2026-01-19
+openai/gpt-audio-mini,GPT Audio Mini,OpenAI,0.6,2.4,,128000,2026-01-19
+bytedance-seed/seed-1.6-flash,Seed 1.6 Flash,bytedance-seed,0.075,0.3,,262144,2025-12-23
+bytedance-seed/seed-1.6,Seed 1.6,bytedance-seed,0.25,2,,262144,2025-12-23
+openai/gpt-5.2-chat,GPT-5.2 Chat,OpenAI,1.75,14,0.175,128000,2025-12-10
+openai/gpt-5.2-pro,GPT-5.2 Pro,OpenAI,21,168,,400000,2025-12-10
+relace/relace-search,Relace Search,relace,1,3,,256000,2025-12-08
+openrouter/bodybuilder,Body Builder (beta),OpenRouter,-1000000,-1000000,,128000,2025-12-05
+openai/gpt-5.1-codex-max,GPT-5.1-Codex-Max,OpenAI,1.25,10,0.125,400000,2025-12-04
+google/gemini-3-pro-image-preview,Nano Banana Pro (Gemini 3 Pro Image Preview),Google,2,12,0.2,65536,2025-11-20
+perplexity/sonar-pro-search,Sonar Pro Search,Perplexity,3,15,,200000,2025-10-30
+mistralai/voxtral-small-24b-2507,Voxtral Small 24B 2507,Mistral,0.1,0.3,0.01,32768,2025-10-30
+openai/gpt-oss-safeguard-20b,gpt-oss-safeguard-20b,OpenAI,0.075,0.3,0.0375,131072,2025-10-29
+openai/gpt-5-image-mini,GPT-5 Image Mini,OpenAI,2.5,2,0.25,400000,2025-10-16
+openai/gpt-5-image,GPT-5 Image,OpenAI,10,10,1.25,400000,2025-10-14
+google/gemini-2.5-flash-image,Nano Banana (Gemini 2.5 Flash Image),Google,0.3,2.5,0.03,32768,2025-10-07
+openai/gpt-5-pro,GPT-5 Pro,OpenAI,15,120,,400000,2025-10-06
+thedrummer/cydonia-24b-v4.1,Cydonia 24B V4.1,Drummer,0.3,0.5,0.15,131072,2025-09-27
+relace/relace-apply-3,Relace Apply 3,relace,0.85,1.25,,256000,2025-09-26
+qwen/qwen3-coder-flash,Qwen3 Coder Flash,Qwen,0.195,0.975,0.039,1000000,2025-09-17
+mistralai/codestral-2508,Codestral 2508,Mistral,0.3,0.9,0.03,256000,2025-08-01
+bytedance/ui-tars-1.5-7b,UI-TARS 7B ,bytedance,0.1,0.2,0.1,128000,2025-07-22
+cognitivecomputations/dolphin-mistral-24b-venice-edition,Uncensored,venice,0.2,0.9,,128000,2025-07-09
+tencent/hunyuan-a13b-instruct,Hunyuan A13B Instruct,tencent,0.14,0.57,,131072,2025-07-08
+morph/morph-v3-large,Morph V3 Large,morph,0.9,1.9,,262144,2025-07-07
+morph/morph-v3-fast,Morph V3 Fast,morph,0.8,1.2,,262144,2025-07-07
+mistralai/mistral-small-3.2-24b-instruct,Mistral Small 3.2 24B,Mistral,0.075,0.2,,256000,2025-06-20
+google/gemini-2.5-pro-preview,Gemini 2.5 Pro Preview 06-05,Google,1.25,10,0.125,1048576,2025-06-05
+meta-llama/llama-guard-4-12b,Llama Guard 4 12B,Meta Llama,0.18,0.18,,163840,2025-04-30
+mistralai/mistral-small-3.1-24b-instruct,Mistral Small 3.1 24B,Mistral,0.351,0.555,,128000,2025-03-17
+thedrummer/skyfall-36b-v2,Skyfall 36B V2,Drummer,0.55,0.8,0.25,32768,2025-03-10
+perplexity/sonar-reasoning-pro,Sonar Reasoning Pro,Perplexity,2,8,,128000,2025-03-07
+perplexity/sonar-deep-research,Sonar Deep Research,Perplexity,2,8,,128000,2025-03-07
+aion-labs/aion-rp-llama-3.1-8b,Aion-RP 1.0 (8B),Aion Labs,0.8,1.6,,32768,2025-02-04
+qwen/qwen2.5-vl-72b-instruct,Qwen2.5 VL 72B Instruct,Qwen,0.8,1,0.4,128000,2025-02-01
+qwen/qwen-plus,Qwen-Plus,Qwen,0.26,0.78,0.052,1000000,2025-02-01
+deepseek/deepseek-chat,DeepSeek V3,deepseek-ai,0.2574,1.0287,,163840,2024-12-26
+cohere/command-r7b-12-2024,Command R7B (12-2024),Cohere,0.0375,0.15,,128000,2024-12-14
+thedrummer/unslopnemo-12b,UnslopNemo 12B,Drummer,0.4,0.4,,1024000,2024-11-08
+anthracite-org/magnum-v4-72b,Magnum v4 72B,anthracite-org,2.5,5,,32768,2024-10-22
+qwen/qwen-2.5-7b-instruct,Qwen2.5 7B Instruct,Qwen,0.1,0.2,,32768,2024-10-16
+cohere/command-r-08-2024,Command R (08-2024),Cohere,0.15,0.6,,128000,2024-08-30
+cohere/command-r-plus-08-2024,Command R+ (08-2024),Cohere,2.5,10,,128000,2024-08-30
+sao10k/l3.1-euryale-70b,Llama 3.1 Euryale 70B v2.2,Sao10K,0.85,0.85,,131072,2024-08-28
+sao10k/l3-lunaris-8b,Llama 3 8B Lunaris,Sao10K,0.04,0.05,,8192,2024-08-13
+mistralai/mistral-nemo,Mistral Nemo,Mistral,0.029,0.03,,131072,2024-07-19
+openai/gpt-4o-mini-2024-07-18,GPT-4o-mini (2024-07-18),OpenAI,0.15,0.6,0.075,128000,2024-07-18
+google/gemma-2-27b-it,Gemma 2 27B,Google,0.65,0.65,,8192,2024-07-13
+openai/gpt-4o,GPT-4o,OpenAI,2.5,10,1.25,128000,2024-05-13
+openai/gpt-3.5-turbo-0613,GPT-3.5 Turbo (older v0613),OpenAI,1,2,,4095,2024-01-25
+openai/gpt-3.5-turbo-16k,GPT-3.5 Turbo 16k,OpenAI,3,4,,16385,2023-08-28
+mancer/weaver,Weaver (alpha),Mancer,0.4,0.75,,8000,2023-08-02
+undi95/remm-slerp-l2-13b,ReMM SLERP 13B,Undi,0.35,0.65,,6144,2023-07-22
+gryphe/mythomax-l2-13b,MythoMax 13B,Gryphe,0.08,0.11,,8192,2023-07-02
