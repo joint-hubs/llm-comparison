@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fenix — porównywarka modeli per rola</title>
+  <meta name="description" content="Statyczna porównywarka modeli LLM per rola squadu Fenix: ranking jakości, koszt cache-aware, coverage pomiarów, porównanie 2–4 modeli.">
+  <style>
+    :root {
+      --bg: #fcfcfb;
+      --ink: #1a1a1a;
+      --muted: #6c757d;
+      --line: #dee2e6;
+      --accent: #2c6fb3;
+      --warn-bg: #fff8e6;
+      --warn-ink: #7a5c00;
+      --ok-bg: #e8f4ea;
+      --ok-ink: #1e6b33;
+      --est-bg: #fdf0e3;
+      --est-ink: #8a5200;
+      --na-bg: #efefef;
+      --na-ink: #5b5b5b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    main, header, footer { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+    header.site { padding-top: 1.25rem; }
+    header.site nav a { color: var(--accent); text-decoration: none; }
+    h1 { font-size: 1.6rem; margin: 0.4rem 0 0.2rem; }
+    h2 { font-size: 1.25rem; margin: 1.6rem 0 0.5rem; border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.05rem; margin: 1rem 0 0.4rem; }
+    p { margin: 0.4rem 0; }
+    .muted { color: var(--muted); }
+    .mono { font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.85em; }
+    .range { color: var(--muted); font-size: 0.85em; font-weight: 400; }
+    .hint { color: var(--muted); font-size: 0.85rem; }
+    .warn { color: var(--warn-ink); background: var(--warn-bg);
+            border: 1px solid #eadfa8; border-radius: 6px;
+            padding: 0.6rem 0.8rem; display: inline-block; }
+    .disclaimer {
+      color: var(--muted); font-size: 0.85rem; background: #f6f6f4;
+      border-left: 3px solid var(--line); padding: 0.6rem 0.9rem; margin: 0.8rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    fieldset { border: 1px solid var(--line); border-radius: 8px;
+               margin: 0.8rem 0; padding: 0.7rem 0.9rem; }
+    legend { font-weight: 600; font-size: 0.9rem; padding: 0 0.4rem; }
+    label.w-cell { display: flex; flex-direction: column; gap: 0.15rem;
+                   font-size: 0.8rem; min-width: 74px; }
+    .w-grid, .s-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .s-grid label.w-cell { min-width: 110px; }
+    input[type="number"], input[type="search"], select {
+      padding: 0.25rem 0.4rem; border: 1px solid var(--line); border-radius: 5px;
+      background: #fff; font-size: 0.9rem; max-width: 130px;
+    }
+    select { max-width: none; }
+    input[type="search"] { max-width: 220px; }
+    .running-sum { font-size: 0.85rem; margin: 0.3rem 0; }
+    button {
+      font: inherit; font-size: 0.85rem; cursor: pointer;
+      border: 1px solid var(--line); background: #fff; color: var(--ink);
+      border-radius: 6px; padding: 0.3rem 0.7rem;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button[disabled] { opacity: 0.5; cursor: not-allowed; }
+    button[data-on="1"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .sort-btn { border: none; background: none; padding: 0.2rem 0; font-weight: 600; }
+    .block-label { display: block; font-weight: 600; font-size: 0.85rem; margin: 0.5rem 0 0.2rem; }
+    .f-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0.3rem 0; }
+    .prov-grid, .prov { display: inline-flex; gap: 0.25rem; align-items: center;
+                        font-size: 0.85rem; margin-right: 0.4rem; }
+    .table-wrap { overflow-x: auto; margin: 0.5rem 0 1rem; }
+    table.data-table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--line); padding: 0.42rem 0.6rem; text-align: left;
+      vertical-align: top;
+    }
+    table.data-table thead th { background: #f1f3f5; font-size: 0.8rem; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .rank-table td:nth-child(3), .rank-table td:nth-child(4),
+    .rank-table td:nth-child(5) { white-space: nowrap; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      font-size: 0.72rem; font-weight: 600; border-radius: 999px;
+      padding: 0.08rem 0.55rem; white-space: nowrap;
+    }
+    .badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%;
+                     background: currentColor; flex: none; }
+    .badge-measured { background: var(--ok-bg); color: var(--ok-ink); }
+    .badge-estimated { background: var(--est-bg); color: var(--est-ink); }
+    .badge-na { background: var(--na-bg); color: var(--na-ink); }
+    #banner {
+      background: var(--warn-bg); color: var(--warn-ink);
+      border: 1px solid #eadfa8; border-radius: 8px;
+      padding: 0.7rem 1rem; margin: 0.8rem 0; font-size: 0.95rem;
+    }
+    #js-error {
+      background: #fdecea; color: #8a1f16; border: 1px solid #f2b8b0;
+      border-radius: 8px; padding: 0.7rem 1rem; margin: 0.8rem 0;
+    }
+    .empty-state { color: var(--muted); padding: 0.8rem 0;
+                   display: flex; gap: 1rem; align-items: center; }
+    .cmp-table th[scope="row"], .unscored-table th[scope="col"] { font-size: 0.8rem; }
+    .flag { font-weight: 700; }
+    a { color: var(--accent); }
+    footer.site { padding: 1.5rem 1.25rem 3rem; color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <nav aria-label="Nawigacja raportu"><a href="./index.html">&larr; Raport gł&oacute;wny</a></nav>
+    <h1>Fenix &mdash; por&oacute;wnywarka modeli per rola</h1>
+    <p id="data-as-of" class="muted" aria-live="polite">
+      Dane: <a href="data/model-dashboard.json">data/model-dashboard.json</a> &mdash; 212 modeli ze scoringiem, 141 bez benchmark&oacute;w, 32 role squad&oacute;w.
+    </p>
+  </header>
+
+  <main>
+    <noscript>
+      <p class="warn"><strong>Tryb bez JavaScript:</strong> strona jest statyczna, ale interaktywny
+        ranking (wagi roli, filtry, sortowanie, por&oacute;wnanie modeli) wymaga włączonego
+        JavaScript. Surowe dane są dostępne w pliku
+        <a href="data/model-dashboard.json">data/model-dashboard.json</a>, a definicje r&oacute;l
+        (wagi metryk i default token shares) w
+        <a href="https://github.com/mateusz-stachowicz/model-explorer-data/blob/main/config/role_registry.json">config/role_registry.json</a>.</p>
+    </noscript>
+    <p id="js-error" hidden></p>
+
+    <section aria-labelledby="role-h">
+      <h2 id="role-h">1. Rola i jej wagi</h2>
+      <p class="disclaimer">
+        Metric weights and token-share defaults are <strong>expert heuristics for model selection</strong>.
+        They are not measurements of role performance and do not imply
+        that a higher-weighted benchmark causes better outcomes in that role. The v2
+        DEV/REVIEW/TEST metric triples are starting points, not empirical truth.
+      </p>
+      <div id="role-panel"></div>
+    </section>
+
+    <section aria-labelledby="rank-h">
+      <h2 id="rank-h">2. Ranking modeli</h2>
+      <div id="banner" role="status" hidden></div>
+      <div id="filters"></div>
+      <div id="ranking"></div>
+    </section>
+
+    <section aria-labelledby="cmp-h">
+      <h2 id="cmp-h">3. Por&oacute;wnanie modeli (2&ndash;4)</h2>
+      <div id="comparison"></div>
+    </section>
+
+    <section aria-labelledby="unsc-h">
+      <h2 id="unsc-h">4. Modele bez danych benchmarkowych</h2>
+      <div id="unscored"></div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <p>Wagi metryk i <em>default token shares</em> pochodzą z
+      <span class="mono">config/role_registry.json</span> (32 role). Percentyle liczone względem
+      kohorty 212 modeli z pełnym scoringiem (dane: <span class="mono">data/pipeline_v2.rds</span>).
+      Ranking to jawne sortowanie po wybranej kolumnie; &ldquo;Q envelope (heuristic)&rdquo; to
+      heurystyka wagowa, nie przedział ufności.</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "",
+    "text": "To jest projekt Data Scientist po godzinach. Po dniu pracy z danymi zauważyłem, że tęsknię za tym, co kiedyś lubiłem najbardziej: otwarciem surowego, publicznego zbioru danych i klasyczną eksploracją statystyczną — rozkładami, brakami danych, korelacjami, regresją. Nie dashboardem, nie „AI ubezpieczonym cudzysłowem” — tylko zwykłą, rzetelną analizą. Zamiast wracać do irysów, wziąłem zbiór, który na co dzień kupuję za własne pieniądze: publiczne dane o modelach LLM z katalogów OpenRouter i Artificial Analysis (AA).\n\n  Ocenione modele\n  212\n  +141 bez ocen (tylko cenniki)\n\n  Benchmarki AA\n  14\n  9 celów + 5 predyktorów\n\n  Mediana błędu LOO |SPE| (E5)\n  11,4%\n  Pearson r = 0,925 · 1056 komórek\n\n  Cena vs jakość\n  ~20 pkt / 10×\n  R² ≈ 21% wariancji ceny\n\nZebrałem 353 modele — 212 z pomiarami benchmarków i 141 z samymi cennikami — co daje 390 wierszy model × wariant w 14 benchmarkach AA. I wtedy okazało się, że naiwny ranking nie działa. Trzy powody:\n1. Pułapka uśredniania wariantów (reasoning effort). Ten sam model bywa testowany w trybach low, medium, high, max. Uśrednienie tych wyników po równo karze modele, które ekspozycjonują tanie, szybkie tryby — ich średnia spada, choć ich najlepszy wariant jest świetny. v2 porządkuje to hierarchią wariantu flagowego (max &gt; xhigh &gt; high &gt; on &gt; default &gt; medium &gt; low &gt; minimal &gt; off).\n2. Nieprzypadkowe braki danych (MNAR — Missing Not At Random). W 9 benchmarkach docelowych brakuje 44.6540881 komórek (a 37,9% w całej czternastce) — i to nie jest szum losowy. Tańsi i mniejsi dostawcy po prostu nie uruchamiają drogich zestawów agentowych i kodowych. Brak danych niesie informację o pozycji rynkowej modelu, więc ignorowanie go (albo wypełnianie medianą) fałszuje ranking w sposób systematyczny.\n3. Brak wspólnego mianownika dla ról wieloagentowych. Wybór modeli „po hype” albo po jednym indeksie podsumowującym ignoruje dwie rzeczy, które w praktyce budują system wieloagentowy: surplus jakości do ceny oraz specjalizację ról. Inny model pisze kod, inny audytuje, inny klika po CLI — i każdy z tych profilów ma inną krzywą ceny.\nTen raport buduje odpowiedź na wszystkie trzy problemy: warianty flagowe zamiast średniej (Rozdział 2), skrośny estymator braków E5 walidowany LOO (Rozdział 3–4), detektor anomalii jakościowych (Rozdział 5), taksonomię rynku (Rozdział 6), ekonomię i podwójną frontierę Pareto (Rozdział 7) oraz rekomendacje KPI dla systemu wieloagentowego Fenix (Rozdział 8)."
+  },
+  {
+    "objectID": "index.html#benchmarków-9-celów-5-predyktorów",
+    "href": "index.html#benchmarków-9-celów-5-predyktorów",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "2.1 14 benchmarków: 9 celów + 5 predyktorów",
+    "text": "2.1 14 benchmarków: 9 celów + 5 predyktorów\nAnaliza dzieli 14 benchmarków AA na dwie grupy:\n\n9 metryk docelowych — te estymujemy i rekomendujemy: intel (inteligencja ogólna), code (kod), agent (agentic), py (Python), term (terminal/CLI), ifb (instrukcje/format), lctx (długi kontekst), econ (ekonomia/logika biznesowa), hon (uleczalność halucynacji).\n5 predyktorów pomocniczych — hle, phys, gpqa, tau2, know. Są mierzone u większej liczby dostawców i służą do przewidywania braków w metrykach docelowych.\n\n\n\n\n  \n\n\n\nBraki w 9 metrykach docelowych są nieprzypadkowe — to nie losowe dziury, tylko ślad struktury rynku: drogie zestawy testów kupują duzi. Strukturalne wzorce braków (kolumny pomiaru współwystępujące u tych samych modeli):\n\n\n\n  \n\n\n\n\n\n\nPokrycie pomiarów na 14 benchmarkach AA — procent zmierzonych modeli na metrykę"
+  },
+  {
+    "objectID": "index.html#hierarchia-wariantu-flagowego-i-kara-uśredniania",
+    "href": "index.html#hierarchia-wariantu-flagowego-i-kara-uśredniania",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "2.2 Hierarchia wariantu flagowego i kara uśredniania",
+    "text": "2.2 Hierarchia wariantu flagowego i kara uśredniania\nv1 liczył średnią po wszystkich wariantach. v2 wybiera wariant flagowy wg hierarchii max &gt; xhigh &gt; high &gt; on &gt; default &gt; medium &gt; low &gt; minimal &gt; off. Kara za uśrednianie jest mierzalna — dla modeli z wieloma wariantami:"
+  },
+  {
+    "objectID": "index.html#drabina-nakładu-rozumowania-reasoning-effort",
+    "href": "index.html#drabina-nakładu-rozumowania-reasoning-effort",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "2.3 Drabina nakładu rozumowania (Reasoning Effort)",
+    "text": "2.3 Drabina nakładu rozumowania (Reasoning Effort)\nIle daje podniesienie wysiłku rozumowania z low na high? Mediana zysku punktowego na metrykę:\n\n\n\n  \n\n\n\nDla metryk wiedzowo-intelektualnych skok jest duży: gpqa +14,0 pkt, intel +13,6 pkt; dla kodu code +7,0 pkt. Wniosek praktyczny: drabina effort to darmowy przyrost jakości — zanim dopłacisz za większy model, dopłać za tokeny rozumowania tego, który już masz.\n\n\n\nZysk punktowy low→high na metrykę — drabina reasoning effort"
+  },
+  {
+    "objectID": "index.html#problem",
+    "href": "index.html#problem",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "3.1 Problem",
+    "text": "3.1 Problem\nMamy macierz modeli × metryki, w której 44,7% komórek w metrykach docelowych jest pusta. Chcemy wypełnić braki estymatą \\(\\hat{y}\\) taką, żeby błąd względem prawdziwego wyniku \\(y\\) był mały i — co ważniejsze — nieobciążony systematycznie względem ceny modelu."
+  },
+  {
+    "objectID": "index.html#spe-symetryczny-błąd-procentowy",
+    "href": "index.html#spe-symetryczny-błąd-procentowy",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "3.2 SPE: symetryczny błąd procentowy",
+    "text": "3.2 SPE: symetryczny błąd procentowy\nJakość estymacji mierzymy symetrycznym błędem procentowym:\n\\[\\text{SPE}(E, A) = \\frac{200 \\cdot (E - A)}{|E| + |A|}\\]\ngdzie \\(E\\) to estymata, a \\(A\\) — rzeczywisty wynik. SPE jest ograniczony do ±200% (nie wybucha dla małych mianowników), symetryczny (błąd 2× w górę = błąd 2× w dół) i inwariantny skalowo między benchmarkami o różnych sufitach punktowych. Liczy się znak:\n\n\\(\\text{SPE} &lt; 0 \\iff A &gt; E\\) — model bije estymatę: wypada lepiej, niż wynikałoby z jego innych testów. Potencjalna ukryta perełka.\n\\(\\text{SPE} &gt; 0 \\iff E &gt; A\\) — model poniżej oczekiwań: jego wyniki w innych testach sugerowały więcej. Przeszacowany."
+  },
+  {
+    "objectID": "index.html#drabina-estymatorów-e0-e5",
+    "href": "index.html#drabina-estymatorów-e0-e5",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "3.3 Drabina estymatorów: E0 → E5",
+    "text": "3.3 Drabina estymatorów: E0 → E5\n\n\n\nEstymator\nMetoda\n\n\n\n\nE0\nmediana globalna metryki (dno — ignoruje model)\n\n\nE1\nmediana dostawcy (autorska „rodzina” modeli jest spójna)\n\n\nE2\npary ilorazów względem zmierzonych metryk\n\n\nE3\nnieważony basen 9 metryk docelowych — baseline v1\n\n\nE4\npairwise OLS (regresje parami metryk)\n\n\nE5\nzespół ważony R²: top-4 predyktory, 14 metryk — v2\n\n\n\nDlaczego E5 działa: spośród 14 benchmarków wybiera jako predyktory tylko te, które mają \\(R^2 \\ge 0{,}30\\) względem metryki docelowej; regresje OLS ważą \\((R^2)^2\\), a ilorazy parami \\(0{,}5\\,(R^2)^2\\). Dzięki temu predyktory z pełnego zbioru — gpqa, hle, phys, tau2, know — pomagają przewidywać braki w code, agent, py. Dla metryk ortogonalnych (np. hon, gdzie maksymalne \\(R^2 \\approx 0{,}14\\)) E5 wraca do E1 — lepiej słaba estymata, niż zła regresja."
+  },
+  {
+    "objectID": "index.html#protokół",
+    "href": "index.html#protokół",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "4.1 Protokół",
+    "text": "4.1 Protokół\nProtokół walidacji jest brutalnie prosty: dla każdej z 1056 zmierzonych komórek w 9 metrykach docelowych ukrywamy jej wartość, liczymy estymatę z reszty danych i porównujemy z prawdą przez SPE. To Leave-One-Out cross-validation na całym zbiorze — bez żonglowania podziałami train/test, bo każdy punkt raz bycia testem."
+  },
+  {
+    "objectID": "index.html#drabina-dokładności-e0-e5",
+    "href": "index.html#drabina-dokładności-e0-e5",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "4.2 Drabina dokładności: E0 → E5",
+    "text": "4.2 Drabina dokładności: E0 → E5\n\n\n\n  \n\n\n\nSkok z E3 do E5 to cała historia tego projektu w jednym wierszu: mediana |SPE| spada z 16,4% do 11,4%, MAE z 7,88 do 6,07, a korelacja rośnie z 0,902 do 0,925.\n\n\n\nDrabina dokładności E0→E5 — mediana |SPE|, MAE, korelacja"
+  },
+  {
+    "objectID": "index.html#kalibracja-per-metryka",
+    "href": "index.html#kalibracja-per-metryka",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "4.3 Kalibracja per metryka",
+    "text": "4.3 Kalibracja per metryka\n\n\n\n  \n\n\n\nMetryki ściśle sprzężone z resztą benchmarków estymują się znakomicie: intel (17,1%), py (5,2%), agent (23,8%), code (8,3%), econ (12,4%), lctx (6,4%). Trudniejsze są term, ifb i hon — a hon jest wręcz ortogonalne: halucynacje nie wynikają z „ogólnej inteligencji”, więc estymator świadomie wraca tam do mediana dostawcy.\n\n\n\nKalibracja E5 per metryka — E3 vs E5"
+  },
+  {
+    "objectID": "index.html#odkrycie-obciążenie-cenowe",
+    "href": "index.html#odkrycie-obciążenie-cenowe",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "4.4 Odkrycie: obciążenie cenowe",
+    "text": "4.4 Odkrycie: obciążenie cenowe\nNajważniejszy efekt uboczny LOO: obciążenie cenowe — korelacja residuów z log-ceną. Nieważone baseny globalne systematycznie przeszacowują ultratańskie modele (pokrywają ich braki wynikami lepszych sąsiadów). Po drabinie korelacja spada z -0,27 (E3) do -0,17 (E5). Dlatego rekomendacje w Rozdział 8 podają przedziały niepewności [val_low, val_high] — decyzja cenowa nigdy nie opiera na jednej liczbie punktowej.\n\n\n\nObciążenie cenowe E3 vs E5 — SPE względem log10 ceny"
+  },
+  {
+    "objectID": "index.html#cena-kupuje-mniej-niż-myślisz",
+    "href": "index.html#cena-kupuje-mniej-niż-myślisz",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "7.1 Cena kupuje mniej, niż myślisz",
+    "text": "7.1 Cena kupuje mniej, niż myślisz\nRegresja jakości na log-cenie:\n\\[\\text{quality} \\sim \\log_{10}(\\text{blend\\_cost})\\]\n\n\n                  Estimate Std. Error\n(Intercept)       50.90854   1.767311\nlog10(blend_cost) 19.57464   2.621291\n\n\n[1] 0.211\n\n\n10× wyższa cena kupuje średnio 20 punktów percentylowych jakości — i wyjaśnia tylko 21% wariancji. Pozostałe ~75% to architektura, kwantyzacja i inżynieria dostawcy. To jest najważniejsza liczba ekonomiczna tego raportu: rynek LLM nie jest rynkiem komoditowym — drogo ≠ lepiej, i tanio ≠ słabo.\n\n\n\nCena vs jakość — krzywa rynkowa i rezerwa wartości\n\n\nKtóre umiejętności są najdroższe w kupowaniu, a które już skomodytyzowano?\n\n\n\nNachylenie ceny na metrykę — co kupuje 10× ceny"
+  },
+  {
+    "objectID": "index.html#podwójna-frontiera-pareto",
+    "href": "index.html#podwójna-frontiera-pareto",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "7.2 Podwójna frontiera Pareto",
+    "text": "7.2 Podwójna frontiera Pareto\nFrontiera liczona jest w dwóch wersjach: wszystkie modele (pareto_all) oraz zweryfikowani (pareto_verified — wymagane ≥ 5 z 7 zmierzonych metryk METRICS_7). Różnica między nimi to w praktyce ryzyko estymacji: model z 3 pomiarami może być na fronterze tylko dlatego, że jego braki zostały optymistycznie imputowane.\nStudium przypadku: xiaomi/mimo-v2.6-pro — 3/7 zmierzonych metryk za $0,54/1M — versusmeta/muse-spark-1.3: 5/7 zmierzonych za$2,00/1M. Oba są świetne, ale pewność ich pozycji jest zupełnie różna — i dokładnie to pokazuje rozdział „all vs verified”.\n\n\n\nPodwójna frontiera Pareto — wszystkie vs zweryfikowane (≥5/7)\n\n\n\n7.2.1 Interaktywna frontiera"
+  },
+  {
+    "objectID": "index.html#kwadrant-syntezy-prawdziwe-ukryte-perełki",
+    "href": "index.html#kwadrant-syntezy-prawdziwe-ukryte-perełki",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "7.3 Kwadrant syntezy: prawdziwe ukryte perełki",
+    "text": "7.3 Kwadrant syntezy: prawdziwe ukryte perełki\nDwie osie anomalii: med_spe &lt; 0 (model bije estymator) oraz resid &gt; 0 (jakość ponad krzywą cenową). Model w obu naraz to prawdziwa Hidden Gem — bije zarówno statystykę, jak i rynek.\n\n\n\nKwadrant syntezy — obciążenie estymatora vs rezerwa cenowa\n\n\n\n7.3.1 Interaktywny kwadrant"
+  },
+  {
+    "objectID": "index.html#rekomendacje-w-trzech-budżetach",
+    "href": "index.html#rekomendacje-w-trzech-budżetach",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "8.1 Rekomendacje w trzech budżetach",
+    "text": "8.1 Rekomendacje w trzech budżetach\n\n\n\n  \n\n\n\nTrzy poziomy budżetu: Codzienny kierowca (≤ $1/1M — model, na którym siedzisz cały dzień), Słodki punkt / Pareto (≤ $3/1M — najlepszy stosunek jakości do ceny), Bezwzględny lider (no-limit — gdy liczy się tylko wynik). Zasięg (n_role_meas) i przedziały [score_low, score_high] są częścią rekomendacji: 2/3 za $0{,}54 bywa lepszym zakładem niż 3/3 niepewnego kandydata za $2.\n\n8.1.1 Interaktywna tabela ról"
+  },
+  {
+    "objectID": "index.html#ocena-obecnego-stacka-fenixa",
+    "href": "index.html#ocena-obecnego-stacka-fenixa",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "8.2 Ocena obecnego stacka Fenixa",
+    "text": "8.2 Ocena obecnego stacka Fenixa\n\n\n\n  \n\n\n\nWnioski z danych: z-ai/glm-5.3 i glm-5.3-flash siedzą tuż pod krzywą cenową z ujemnym med_spe (ukryta siła w profilu agentowym), a xiaomi/mimo-v2.6-pro jest na fronterze Pareto mimo częściowej imputacji — decyzje o tych modelach podejmuje się jednak z szerszym przedziałem niepewności niż dla modeli w pełni zmierzonych."
+  },
+  {
+    "objectID": "index.html#pełny-katalog-modeli",
+    "href": "index.html#pełny-katalog-modeli",
+    "title": "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)",
+    "section": "8.3 Pełny katalog modeli",
+    "text": "8.3 Pełny katalog modeli\nWyszukiwarka po wszystkich 212 modelach: cena (blend_cost), jakość, rezerwa, med. SPE, zasięg pomiarowy, role Fenixa i 9 benchmarków:"
+  }
+]

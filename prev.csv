@@ -1,0 +1,12 @@
+﻿model_id,prev_input_usd_per_mtok,prev_output_usd_per_mtok,prev_intel
+deepseek/deepseek-v4-pro,0.435,0.87,44.3
+z-ai/glm-5.2,0.7504,2.358,51.1
+anthropic/claude-sonnet-5,2,10,53.4
+minimax/minimax-m3,0.24,0.96,44.4
+x-ai/grok-4.5,2,6,53.8
+moonshotai/kimi-k2.5,0.375,2.025,35.4
+moonshotai/kimi-k3,3,15,57.1
+qwen/qwen3.6-plus,0.325,1.95,39.6
+qwen/qwen3.7-max,1.475,4.425,46
+qwen/qwen3.7-plus,0.32,1.28,39
+nvidia/nemotron-3-super-120b-a12b,0,0,25.4
