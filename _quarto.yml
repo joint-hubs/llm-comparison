@@ -5,6 +5,9 @@ project:
     - index.qmd
   resources:
     - plots/v2/*.png
+    - dashboard.html
+    - dashboard.js
+    - data/model-dashboard.json
 
 website:
   title: "Eksplorator Modeli LLM v2 — Benchmarki, Estymacja i Ekonomia (Fenix)"
@@ -14,6 +17,8 @@ website:
     left:
       - text: "Raport główny"
         href: index.qmd
+      - text: "Porównywarka modeli"
+        href: dashboard.html
     right:
       - icon: github
         href: https://github.com/joint-hubs/llm-comparison
