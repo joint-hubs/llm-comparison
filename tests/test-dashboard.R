@@ -173,7 +173,7 @@ for (r in reg$roles) {
     a3_ok <- FALSE; cat("  (A3 empty text row:", r$id, ")\n")
   }
 }
-assert(a2_ok, "A2 all 32 weight rows: 14 metrics, int 0-30 on 5-pt scale, sum 100")
+assert(a2_ok, "A2 all 32 weight rows: 14 metrics, int 0-35 on 5-pt scale (35 per Table B), sum 100")
 assert(a3_ok, "A3 all 32 rows: non-empty texts, default shares >= 0 summing to 1.0")
 
 get_role <- function(id) reg$roles[[which(role_ids == id)]]
@@ -523,6 +523,20 @@ const SHARES = { cacheRead: 0.5, input: 0.3, output: 0.2 };
   const byCov = D.sortRows(rows, 'coverage');
   ok(byCov.map(r => r.model.model_id).join(',') === 'a/x,a/y,b/x,c/z',
      'C4c coverage sort on full ties keeps the model_id asc residual');
+}
+// == C4d: provider sort (mixed providers; provider asc, model_id asc residual) ==
+{
+  const mkP = (id, prov) => Object.assign(
+    M(id, { input: 1, output: 1, cache_read: 0 }, { intel: MEAS(50) }),
+    { provider: prov });
+  const rowsP = D.buildRows([mkP('b/y', 'zeta'), mkP('a/z', 'alpha'),
+                             mkP('b/x', 'zeta'), mkP('a/a', 'beta')],
+                            W14(100, 0, 0, 0), SHARES);
+  const byProv = D.sortRows(rowsP, 'provider');
+  ok(byProv.map(r => r.model.provider + '/' + r.model.model_id).join(',') ===
+     'alpha/a/z,beta/a/a,zeta/b/x,zeta/b/y',
+     'C4d provider sort: provider asc, then model_id asc residual (must not throw)',
+     byProv.map(r => r.model.provider + '/' + r.model.model_id).join(','));
 }
 // == C5: weight edit recomputes; no blended quality/cost composite ==
 {

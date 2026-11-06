@@ -49,9 +49,12 @@ function shareValue(shares, name) {
   return 0;
 }
 
+function cmpStr(a, b) {
+  return a < b ? -1 : a > b ? 1 : 0;   // code-unit order, deterministic
+}
+
 function cmpId(a, b) {
-  const x = a.model.model_id, y = b.model.model_id;
-  return x < y ? -1 : x > y ? 1 : 0;   // code-unit order, deterministic
+  return cmpStr(a.model.model_id, b.model.model_id);
 }
 
 /* ---- quality (weighted mean of percentiles) ------------------------------ */
@@ -131,7 +134,7 @@ function sortRows(rows, key) {
     cost:    (a, b) => cmpCost(a, b) || cmpId(a, b),
     coverage:(a, b) => (b.coverage - a.coverage) || cmpId(a, b),
     name:    (a, b) => cmpId(a, b),
-    provider:(a, b) => cmp(a.model.provider, b.model.provider) || cmpId(a, b)
+    provider:(a, b) => cmpStr(a.model.provider, b.model.provider) || cmpId(a, b)
   };
   return r.sort(byKey[key] || byKey.quality);
 }
